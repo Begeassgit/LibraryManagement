@@ -7,10 +7,14 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserDao {
-    @Select("Select ReaderNo,ReaderName,Identities FROM lib_db.dbo.user_t" +
-            "WHERE (ReaderNo=#{ReaderNo} AND ")
-    User LoginCheckDao();
-    @Insert("")
-    int RegisterDao();
+    /*读者线上登录信息数据库查询，存在返回读者信息，不存在返回NULL*/
+    @Select("SELECT ReaderNo,ReaderName,Identities FROM lib_db.dbo.user_t" +
+            "WHERE (ReaderNo=#{ReaderNo} AND Password=#{Password})")
+    User loginCheckDao(String ReaderNo,String Password);
+
+    /*读者注册数据库写入，成功返回大于1的值，失败返回小于1*/
+    @Insert("INSERT INTO lib_db.dbo.user_t(ReaderNo,ReaderName,Age,Sex,Number,Identities,Password)" +
+            "VALUES(#{ReaderNo},#{ReaderName},#{Age},#{Sex},#{Number},#{Identities},#{Password})")
+    int registerDao(User user);
 
 }

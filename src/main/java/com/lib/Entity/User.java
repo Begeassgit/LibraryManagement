@@ -1,5 +1,7 @@
 package com.lib.Entity;
-
+/*
+* 读者实体类
+* */
 public class User {
     private String ReaderNo;
     private String ReaderName;

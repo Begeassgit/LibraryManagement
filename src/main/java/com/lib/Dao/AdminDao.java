@@ -7,8 +7,13 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface AdminDao {
-    @Select("")
-    Admin LoginCheckAdminDao();
-    @Insert("")
-    int registerAdminDao();
+    /*管理员线上登录信息数据库查询，存在返回管理员信息，不存在返回NULL*/
+    @Select("SELECT UserNo,UserName,Authority FROM lib_db.dbo.admin_t" +
+            "WHERE(UserNo=#{UserNo} AND Password=#{Password})")
+    Admin loginCheckAdminDao(String UserNo,String Password);
+
+    /*管理员注册数据库写入，成功返回大于1的值，失败返回小于1*/
+    @Insert("INSERT INTO lib_db.dbo.admin_t(UserNo,UserName,Password,Authority)" +
+            "VALUES(#{UserNo},#{UserName},#{Password},#{Authority})")
+    int registerAdminDao(Admin admin);
 }
