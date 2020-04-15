@@ -1,5 +1,6 @@
 package com.lib.Controller.User;
 
+import com.lib.Entity.User;
 import com.lib.Service.User.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,12 @@ public class UserRegisterController {
     @RequestMapping(value = "/Register",method = RequestMethod.GET)
     public String registerPage(){
         return "Register";
+    }
+
+    @RequestMapping(value = "/Register/Submit",method = RequestMethod.POST)
+    public String registerSubmit(User user){
+        userAccountService.registerService(user);
+        return "";
     }
 
 }

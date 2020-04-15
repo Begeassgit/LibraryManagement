@@ -23,7 +23,7 @@ public class UserLoginController {
         return "Login.html";
     }
 
-    @RequestMapping("/Login/Check")
+    @RequestMapping(value = "/Login/Check",method = RequestMethod.POST)
     public User checkLogin(User user){
         return userAccountService.loginService(user.getReaderNo(),user.getPassword());
     }
