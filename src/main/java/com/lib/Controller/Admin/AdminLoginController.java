@@ -19,7 +19,7 @@ public class AdminLoginController {
 
     @RequestMapping(value = "/Admin",method = RequestMethod.GET)
     public String adminLoginPage(){
-        return "adminLogin";
+        return "AdminLogin";
     }
 
     @RequestMapping(value = "/Admin/Check",method = RequestMethod.POST)

@@ -24,7 +24,7 @@ public class AdminRegisterController {
     @RequestMapping(value = "/Admin/Register/Submit",method = RequestMethod.POST)
     public String registerSubmit(Admin admin){
         if(adminAccountService.registerAdminService(admin)){
-            return "adminLogin";
+            return "AdminLogin";
         }
         else {
             return "RegisterError";
