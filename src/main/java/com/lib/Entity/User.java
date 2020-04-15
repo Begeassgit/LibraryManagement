@@ -7,6 +7,15 @@ public class User {
     private String Sex;
     private String Number;
     private String Identities;
+    private String Password;
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
 
     public String getReaderNo() {
         return ReaderNo;
