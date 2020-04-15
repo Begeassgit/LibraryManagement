@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -20,11 +22,21 @@ public class UserLoginController {
 
     @RequestMapping(value = "/Login",method = RequestMethod.GET)
     public String loginPage(){
-        return "Login.html";
+        return "Login";
     }
 
+    @ResponseBody
     @RequestMapping(value = "/Login/Check",method = RequestMethod.POST)
-    public User checkLogin(User user){
-        return userAccountService.loginService(user.getReaderNo(),user.getPassword());
+    public ModelAndView checkLogin(User user){
+        ModelAndView modelAndView=new ModelAndView();
+        User temp=userAccountService.loginService(user.getReaderNo(),user.getPassword());
+        if(temp==null){
+            modelAndView.setViewName("Login");
+        }
+        else{
+            modelAndView.setViewName("index");
+            modelAndView.addObject("Reader",temp);
+        }
+        return modelAndView;
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UserRegisterController {
@@ -21,10 +22,16 @@ public class UserRegisterController {
         return "Register";
     }
 
+    @ResponseBody
     @RequestMapping(value = "/Register/Submit",method = RequestMethod.POST)
     public String registerSubmit(User user){
-        userAccountService.registerService(user);
-        return "";
+        if(userAccountService.registerService(user)){
+            return "Login";
+        }
+        else {
+            return "RegisterError";
+        }
+
     }
 
 }

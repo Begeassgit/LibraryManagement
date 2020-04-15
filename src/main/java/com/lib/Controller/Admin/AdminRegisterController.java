@@ -23,7 +23,11 @@ public class AdminRegisterController {
 
     @RequestMapping(value = "/Admin/Register/Submit",method = RequestMethod.POST)
     public String registerSubmit(Admin admin){
-        adminAccountService.registerAdminService(admin);
-        return "";
+        if(adminAccountService.registerAdminService(admin)){
+            return "adminLogin";
+        }
+        else {
+            return "RegisterError";
+        }
     }
 }
