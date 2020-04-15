@@ -12,16 +12,19 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminLoginController {
     private final AdminAccountService adminAccountService;
 
+    /*对Service层进行映射*/
     @Autowired
     public AdminLoginController(AdminAccountService adminAccountService){
         this.adminAccountService=adminAccountService;
     }
 
+    /*管理员登录页路由控制*/
     @RequestMapping(value = "/Admin",method = RequestMethod.GET)
     public String adminLoginPage(){
         return "AdminLogin";
     }
 
+    /*管理员登录信息提交API*/
     @RequestMapping(value = "/Admin/Check",method = RequestMethod.POST)
     public ModelAndView checkAdminLogin(String UserNo, String Password){
         ModelAndView modelAndView=new ModelAndView();

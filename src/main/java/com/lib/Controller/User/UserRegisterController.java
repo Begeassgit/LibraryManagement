@@ -17,11 +17,13 @@ public class UserRegisterController {
         this.userAccountService=userAccountService;
     }
 
+    /*用户注册页路由*/
     @RequestMapping(value = "/Register",method = RequestMethod.GET)
     public String registerPage(){
         return "Register";
     }
 
+    /*用户注册的信息提交API*/
     @ResponseBody
     @RequestMapping(value = "/Register/Submit",method = RequestMethod.POST)
     public String registerSubmit(User user){
