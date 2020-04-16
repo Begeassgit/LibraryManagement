@@ -13,7 +13,7 @@ public class AdminLoginController {
     private final AdminAccountService adminAccountService;
 
     /*对Service层进行映射*/
-    @Autowired
+    @Autowired(required = false)
     public AdminLoginController(AdminAccountService adminAccountService){
         this.adminAccountService=adminAccountService;
     }

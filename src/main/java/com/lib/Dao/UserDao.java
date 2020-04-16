@@ -4,6 +4,7 @@ import com.lib.Entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface UserDao {
@@ -16,5 +17,8 @@ public interface UserDao {
     @Insert("INSERT INTO lib_db.dbo.user_t(ReaderNo,ReaderName,Age,Sex,Number,Identities,Password)" +
             "VALUES(#{ReaderNo},#{ReaderName},#{Age},#{Sex},#{Number},#{Identities},#{Password})")
     int registerDao(User user);
+
+    @Update("UPDATE lib_db.dbo.user_t(Password=#{Password}) WHERE (UserNo=#{UserNo})")
+    int resetPasswordDao(String UserNo,String Password);
 
 }

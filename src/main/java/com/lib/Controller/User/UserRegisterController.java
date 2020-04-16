@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserRegisterController {
     private final UserAccountService userAccountService;
 
-    @Autowired
+    @Autowired(required = false)
     public UserRegisterController(UserAccountService userAccountService){
         this.userAccountService=userAccountService;
     }
