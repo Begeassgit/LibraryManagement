@@ -18,7 +18,7 @@ public interface UserDao {
             "VALUES(#{ReaderNo},#{ReaderName},#{Age},#{Sex},#{Number},#{Identities},#{Password})")
     int registerDao(User user);
 
-    @Update("UPDATE lib_db.dbo.user_t(Password=#{Password}) WHERE (UserNo=#{UserNo})")
-    int resetPasswordDao(String UserNo,String Password);
+    @Update("UPDATE lib_db.dbo.user_t(Password=#{Password}) WHERE (ReaderNo=#{ReaderNo})")
+    int resetPasswordDao(String ReaderNo,String Password);
 
 }

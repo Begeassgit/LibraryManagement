@@ -4,6 +4,7 @@ import com.lib.Entity.Admin;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface AdminDao {
@@ -16,4 +17,7 @@ public interface AdminDao {
     @Insert("INSERT INTO lib_db.dbo.admin_t(UserNo,UserName,Password,Authority)" +
             "VALUES(#{UserNo},#{UserName},#{Password},#{Authority})")
     int registerAdminDao(Admin admin);
+
+    @Update("UPDATE lib_db.dbo.admin_t(Password=#{Password}) WHERE (UserNo=#{UserNo})")
+    int resetPasswordAdminDao(String UserNo,String Password);
 }

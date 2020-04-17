@@ -22,4 +22,8 @@ public class UserAccountService {
     public boolean registerService(User user){
         return userDao.registerDao(user)>=1;
     }
+
+    public boolean resetPasswordService(String ReaderNo,String Password){
+        return userDao.resetPasswordDao(ReaderNo, Password)>=1;
+    }
 }
