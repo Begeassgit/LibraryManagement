@@ -19,8 +19,8 @@ public class UserResetPasswordController {
     }
 
     @RequestMapping(value = "/Login/Rest",method = RequestMethod.GET)
-    public String restPage(){
-        return "Rest";
+    public String resetPage(){
+        return "Reset";
     }
 
     @ResponseBody
