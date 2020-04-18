@@ -34,7 +34,7 @@ public class UserLoginController {
             modelAndView.setViewName("Login");
         }
         else{
-            modelAndView.setViewName("Index");
+            modelAndView.setViewName("Home");
             modelAndView.addObject("Reader",temp);
         }
         return modelAndView;
