@@ -4,6 +4,7 @@ body{
     background: lightgoldenrodyellow;
 }
 .signup-form{
+    border-top: 0;
     width: 400px;
     height: 600px;
     padding: 100px;
