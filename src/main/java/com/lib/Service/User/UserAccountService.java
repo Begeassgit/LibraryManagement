@@ -19,7 +19,11 @@ public class UserAccountService {
         return userDao.loginCheckDao(ReaderNo,Password);
     }
 
-    public boolean registerService(User user){
+    public boolean registerService(String ReaderNo,String Number,String Password){
+        User user=new User();
+        user.setReaderNo(ReaderNo);
+        user.setNumber(Number);
+        user.setPassword(Password);
         return userDao.registerDao(user)>=1;
     }
 

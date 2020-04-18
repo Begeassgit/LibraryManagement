@@ -26,8 +26,8 @@ public class UserRegisterController {
     /*用户注册的信息提交API*/
     @ResponseBody
     @RequestMapping(value = "/Register/Submit",method = RequestMethod.POST)
-    public String registerSubmit(User user){
-        if(userAccountService.registerService(user)){
+    public String registerSubmit(String ReaderNo,String Number,String Password){
+        if(userAccountService.registerService(ReaderNo, Number, Password)){
             return "Login";
         }
         else {
