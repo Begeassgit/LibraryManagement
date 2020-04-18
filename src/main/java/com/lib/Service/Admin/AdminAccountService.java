@@ -21,4 +21,8 @@ public class AdminAccountService {
     public boolean registerAdminService(Admin admin){
         return adminDao.registerAdminDao(admin)>=1;
     }
+
+    public boolean resetPasswordAdminService(String UserNo,String Password){
+        return adminDao.resetPasswordAdminDao(UserNo, Password)>=1;
+    }
 }

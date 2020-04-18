@@ -25,13 +25,13 @@ public class UserResetPasswordController {
 
     @ResponseBody
     @RequestMapping(value = "/Login/RestSubmit",method = RequestMethod.POST)
-    public ModelAndView checkRest(String ReaderNo,String Password){
+    public ModelAndView checkReset(String ReaderNo,String Password){
         ModelAndView modelAndView=new ModelAndView();
         if(userAccountService.resetPasswordService(ReaderNo, Password)){
             modelAndView.setViewName("Login");
         }
         else{
-            modelAndView.setViewName("RestError");
+            modelAndView.setViewName("ResetError");
         }
         return modelAndView;
     }
