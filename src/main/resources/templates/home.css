@@ -1,0 +1,21 @@
+body{
+    background-image:url("bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+a button{
+
+    outline-style: dot-dash;
+    text-decoration: none;
+    float: right;
+    padding-right: 0px;
+}
+a button:link{
+    color: #89ff20;
+}
+a button:active{
+    color: #ff252a;
+}
+
+
+
