@@ -21,7 +21,7 @@ public interface UserDao {
     @Update("UPDATE lib_db.dbo.user_t(Password=#{Password}) WHERE (ReaderNo=#{ReaderNo})")
     int resetPasswordDao(String ReaderNo,String Password);
 
-    @Select("SELECT")
+    @Select("SELECT * FROM lib_db.dbo.user_t WHERE(ReaderNo=#{ReaderNo})")
     User getInfoDao(String ReaderNo);
 
 }
