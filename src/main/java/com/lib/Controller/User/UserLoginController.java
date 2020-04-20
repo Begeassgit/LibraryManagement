@@ -29,14 +29,13 @@ public class UserLoginController {
 
     @ResponseBody
     @RequestMapping(value = "/Login/Check",method = RequestMethod.POST)
-    public ModelAndView checkLogin(HttpServletRequest request, User user){
+    public ModelAndView checkLogin(User user){
         ModelAndView modelAndView=new ModelAndView();
         User temp=userAccountService.loginService(user.getReaderNo(),user.getPassword());
         if(temp==null){
             modelAndView.setViewName("Login");
         }
         else{
-            request.getSession().setAttribute(user.getReaderName(),user.getPassword());
             modelAndView.setViewName("Home");
             modelAndView.addObject("Reader",temp);
         }

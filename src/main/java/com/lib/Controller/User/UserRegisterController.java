@@ -28,7 +28,7 @@ public class UserRegisterController {
     @RequestMapping(value = "/Register/Submit",method = RequestMethod.POST)
     public String registerSubmit(String ReaderNo, String Number, String Password){
         if(userAccountService.registerService(ReaderNo, Number, Password)){
-            return "Login";
+            return "redirect:/Login";
         }
         else {
             return "RegisterError";
