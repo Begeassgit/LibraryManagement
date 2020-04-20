@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface UserDao {
     /*读者线上登录信息数据库查询，存在返回读者信息，不存在返回NULL*/
-    @Select("SELECT ReaderNo,ReaderName,Identities FROM lib_db.dbo.user_t" +
+    @Select("SELECT ReaderNo,ReaderName,Identities FROM lib_db.dbo.user_t " +
             "WHERE (ReaderNo=#{ReaderNo} AND Password=#{Password})")
     User loginCheckDao(String ReaderNo,String Password);
 
