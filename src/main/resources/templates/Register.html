@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>图书馆管理系统注册界面</title>
+    <link rel="stylesheet"  href="Signup.css">
+    <script>
+        function checkPassword() {
+            const password=document.forms['form1']['Password'].value;
+            const password1=document.forms['fomr1']['Password1'].value;
+            if(password!==password1){
+                alert("两次输入的密码不一致");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<div class="signup-form">
+    <form name="form1" class="" action="http://127.0.0.1:8080/Register/Submit" method="post" onsubmit="checkPassword()">
+        <h1>注册账号</h1>
+        <input type="text" name="ReaderNo" placeholder="学号/教工号" class="txtb">
+        <input type="text" name="Number" placeholder="手机号" class="txtb">
+        <input type="password" name="Password" placeholder="密码" class="txtb">
+        <input type="password" name="Password1" placeholder="确认密码" class="txtb">
+        <input type="submit" value="创建账号" class="signup-btn" id="signup" >
+        <a href="http://127.0.0.1:8080/Login">已有账号</a>
+    </form>
+</div>
+</body>
+</html>
