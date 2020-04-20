@@ -1,14 +1,21 @@
 body{
-    background-image:url("bg.png");
+    background-image:url("Image/bg3.png");
     background-repeat: no-repeat;
     background-size: 100%;
 }
-a button{
 
+a button{
     outline-style: dot-dash;
+    color: white;
+    background-color: lightskyblue;
     text-decoration: none;
-    float: right;
-    padding-right: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: none;
+    font-family: sans-serif;
+    cursor: pointer;
+
 }
 a button:link{
     color: #89ff20;
@@ -16,6 +23,188 @@ a button:link{
 a button:active{
     color: #ff252a;
 }
+
+.head{
+    position: absolute;
+    top: 0px;
+    left: 25%;
+    width: 800px;
+    height: 80px;
+    color: black;
+    text-align: center;
+    line-height: 80px;
+    font-size: 50px;
+    animation: x 5s infinite alternate;
+    -webkit-animation: x 5s infinite alternate;
+}
+
+.content{
+    width: 100px;
+    height: 500px;
+    position: absolute;
+    left: 0px;
+    top:200px;
+    background-color: rgba(42,42,42,0.528);
+    text-align: center;
+    line-height: 30px;
+}
+
+#hismessage,#libmessage,#payrmessage,#nowmessage,#usermessage{
+    text-decoration: none;
+    color: white;
+
+}
+
+#hismessage:hover,#libmessage:hover,#payrmessage:hover,#nowmessage:hover,#usermessage:hover{
+    color: #dbf810;
+}
+
+img{
+    width: 20px;
+    height: 20px;
+}
+
+.middle{
+    position: absolute;
+    width: 1000px;
+    height: 50px;
+    left: 200px;
+    top:200px
+}
+
+.middle a{
+    text-decoration: none;
+}
+
+.middle img{
+    width: 30px;
+    height: 20px;
+    border:solid #eb9b1a;
+    border-radius:50% ;
+    padding: 10px;
+}
+
+.ss{
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    left: 300px;
+    top:150px;
+}
+
+.inp{
+    height: 20px;
+    width: 400px;
+}
+
+.ss-btn{
+   background-color: white;
+}
+
+.first{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.first img{
+    height:30px;
+    width: 100%;
+}
+
+.first a{
+    text-decoration: none;
+}
+
+.second{
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    width: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.second img{
+    height:30px;
+    width: 100%;
+}
+
+.second a{
+    text-decoration: none;
+}
+
+.third{
+    position: absolute;
+    top: 200px;
+    left: 400px;
+    width: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.third img{
+    height:30px;
+    width: 100%;
+}
+
+.third a{
+    text-decoration: none;
+}
+
+.forth{
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    width: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.forth img{
+    height:30px;
+    width: 100%;
+}
+
+.forth a{
+    text-decoration: none;
+}
+
+.fifth{
+    position: absolute;
+    top: 200px;
+    left: 600px;
+    width: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.fifth img{
+    height:30px;
+    width: 100%;
+}
+
+.fifth a{
+    text-decoration: none;
+}
+
+.first a:hover,.second a:hover,.third a:hover,.forth a:hover,.fifth a:hover{
+    transform: scale(0.94);
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
