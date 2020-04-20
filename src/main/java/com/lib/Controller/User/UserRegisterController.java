@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserRegisterController {
@@ -24,9 +25,8 @@ public class UserRegisterController {
     }
 
     /*用户注册的信息提交API*/
-    @ResponseBody
     @RequestMapping(value = "/Register/Submit",method = RequestMethod.POST)
-    public String registerSubmit(String ReaderNo,String Number,String Password){
+    public String registerSubmit(String ReaderNo, String Number, String Password){
         if(userAccountService.registerService(ReaderNo, Number, Password)){
             return "Login";
         }
