@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="Home.css" type="text/css" rel="stylesheet">
+    <link href="/Home.css" type="text/css" rel="stylesheet">
     <title>图书馆管理系统</title>
 </head>
 <body>
 <div class="head">Library Management System</div>
 
-<a  href="Login.html"><button>登录/注册</button></a>
+<a  href="http://127.0.0.1:8080/Login"><button>登录/注册</button></a>
+
+<!--<p th:text="${Reader.getReaderNo()}"></p>
+<p th:text="${Reader.getNumber()}"></p>-->
 
 <div class="content">
     <br><br><br><br><br><br>
@@ -20,30 +23,30 @@
 </div>
 
 <div class="ss">
-    <form action="" method="get" target="_blank">
+    <form action="" method="post" target="_blank">
         <input type="text" class="inp">
         <input type="submit"  value="搜索" class="ss-btn">
     </form>
 </div>
 
 <div class="first">
-    <a href="" style="color: black"><img src="Image/1.png">文学</a>
+    <a href="" style="color: black"><img src="/Image/1.png">文学</a>
 </div>
 
 <div class="second">
-    <a href="" style="color: black"><img src="Image/2.png">报纸</a>
+    <a href="" style="color: black"><img src="/Image/2.png">报纸</a>
 </div>
 
 <div class="third">
-    <a href="" style="color: black"><img src="Image/3.png">杂志</a>
+    <a href="" style="color: black"><img src="/Image/3.png">杂志</a>
 </div>
 
 <div class="forth">
-    <a href="" style="color: black"><img src="Image/4.png">论文资料</a>
+    <a href="" style="color: black"><img src="/Image/4.png">论文资料</a>
 </div>
 
 <div class="fifth">
-    <a href="" style="color: black"><img src="Image/5.png">其他资料</a>
+    <a href="" style="color: black"><img src="/Image/5.png">其他资料</a>
 </div>
 
 

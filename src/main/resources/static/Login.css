@@ -1,8 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: lightgoldenrodyellow;
-    background-image: url("Image/bg.png");
+    background: lightgoldenrodyellow url("/Image/2.jpeg");
     background-size: 100%;
 }
 

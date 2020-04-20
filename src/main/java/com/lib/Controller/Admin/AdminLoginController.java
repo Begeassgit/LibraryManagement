@@ -30,7 +30,7 @@ public class AdminLoginController {
         ModelAndView modelAndView=new ModelAndView();
         Admin temp=adminAccountService.loginAdminService(UserNo, Password);
         if(temp==null){
-            modelAndView.setViewName("Index");
+            modelAndView.setViewName("Home");
         }
         else{
             modelAndView.setViewName("AdminIndex");
