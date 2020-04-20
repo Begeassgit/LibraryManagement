@@ -10,6 +10,9 @@
             const password2=document.forms['form1']['Password2'].values;
             if(password!==password2){
                 alert("两次密码不一致")
+                return false;
+            }else {
+                return true;
             }
         }
     </script>
@@ -23,7 +26,7 @@
         <input type="password" name="Password" placeholder="密码" class="txtb">
         <input type="password" name="Password2" placeholder="确认密码" class="txtb">
         <input type="submit" value="创建账号" class="signup-btn" id="signup" >
-        <a href="http://127.0.0.1:8080/Login">已有账号？</a>
+        <a href="http://127.0.0.1:8080/Login">已有账号</a>
     </form>
 </div>
 </body>

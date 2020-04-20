@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 @Controller
 public class UserLoginController {
@@ -27,13 +29,14 @@ public class UserLoginController {
 
     @ResponseBody
     @RequestMapping(value = "/Login/Check",method = RequestMethod.POST)
-    public ModelAndView checkLogin(User user){
+    public ModelAndView checkLogin(HttpServletRequest request, User user){
         ModelAndView modelAndView=new ModelAndView();
         User temp=userAccountService.loginService(user.getReaderNo(),user.getPassword());
         if(temp==null){
             modelAndView.setViewName("Login");
         }
         else{
+            request.getSession().setAttribute(user.getReaderName(),user.getPassword());
             modelAndView.setViewName("Home");
             modelAndView.addObject("Reader",temp);
         }
