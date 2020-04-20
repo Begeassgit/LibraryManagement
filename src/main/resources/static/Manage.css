@@ -1,0 +1,61 @@
+body{
+    background-image: url("Image/bg1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+.manage-form{
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    background-color: rgba(53,53,53,0.648);
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+
+.txtmn{
+     width: 400px;
+     height: 44px;
+     position: absolute;
+     top:100px;
+     left: 100px;
+    border-radius: 44px;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-family: "montserrat",sans-serif;
+    box-sizing: border-box;
+ }
+
+.txtmp{
+    width: 400px;
+    height: 44px;
+    position: absolute;
+    top:160px;
+    left: 100px;
+    border-radius: 44px;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-family: "montserrat",sans-serif;
+    box-sizing: border-box;
+}
+
+.enter-btn{
+    width: 100px;
+    height: 44px;
+    position: absolute;
+    top: 230px;
+    left: 250px;
+    color: #fff;
+    border-radius: 44px;
+    background: lightskyblue;
+    transition: 0.8s;
+    cursor: pointer;
+    border: none;
+}
+
