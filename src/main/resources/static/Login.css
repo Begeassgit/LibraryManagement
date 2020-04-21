@@ -1,25 +1,29 @@
 body{
-    background: url(2.jpeg);
     margin: 0;
     padding: 0;
-    /*background: lightgoldenrodyellow;*/
+    background: lightgoldenrodyellow url("/Image/2.jpeg");
+    background-size: 100%;
 }
-.login-form{
+
+.login-form {
+    background-color:rgba(53,53,53,0.648);
     width: 400px;
     height: 600px;
     padding: 100px;
     text-align: center;
-    background: rgba(36, 35, 35, 0.64);
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
     overflow: hidden;
 }
+
+
+
 .login-form h1{
     margin-top: 100px;
     font-family: 黑体, serif;
-    color: #fdfdfd;
+    color: lightskyblue;
     font-size: 50px;
 }
 .login-form input{
@@ -33,35 +37,72 @@ body{
     border: none;
     font-family: "montserrat",sans-serif;
 }
-#login{
+
+#login,#manage{
+    width: 180px;
+    height: 40px;
     background-color: lightskyblue;
-}
-.txtb{
-    margin: 20px 0;
-    background: rgba(255,255,255,.5);
-    border-radius: 6px;
-}
-.login-btn{
     margin-top: 60px;
     margin-bottom: 20px;
-    background: lightskyblue;
     color: #fff;
     border-radius: 44px;
     cursor: pointer;
     transition: 0.8s;
 }
+
+#login{
+    position: absolute;
+    left:100px;
+    top:400px
+}
+
+#manage{
+    text-decoration: none;
+    line-height: 40px;
+    position: absolute;
+    right:100px;
+    top:400px
+}
+
+.txtb{
+    margin: 20px 0;
+    background: rgba(255,255,255,.5);
+    border-radius: 6px;
+}
+
 .login-btn:hover{
     transform: scale(0.96);
 }
-.login-form a{
+
+#user{
+    position: absolute;
+    left: 270px;
+    top:520px;
     text-decoration: none;
-    color: #fff;
-    font-family: "montserrat",sans-serif;
-    font-size: 14px;
-    padding: 10px;
-    transition: 0.8s;
-    display: block;
+    color: white;
 }
-.login-form a:hover{
+
+#manage:hover{
+    transform: scale(0.96);
+}
+
+.login-btn{
+    font-size: 18px;
+}
+
+#user:hover {
+    position: absolute;
+    left: 200px;
+    line-height: 20px;
+    width: 200px;
+    height: 20px;
     background: rgba(0,0,0,.3);
 }
+
+
+
+
+
+
+
+
