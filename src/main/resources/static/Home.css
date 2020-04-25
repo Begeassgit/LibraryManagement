@@ -4,25 +4,13 @@ body{
     background-size: 100%;
 }
 
-a button{
-    outline-style: dot-dash;
-    color: white;
-    background-color: lightskyblue;
-    text-decoration: none;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    border: none;
-    font-family: sans-serif;
-    cursor: pointer;
-
-}
 a button:link{
     color: #89ff20;
 }
 a button:active{
     color: #ff252a;
 }
+
 
 .head{
     position: absolute;

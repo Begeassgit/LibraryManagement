@@ -8,7 +8,27 @@
 <body>
 <div class="head">Library Management System</div>
 
-<a  href="http://127.0.0.1:8080/Login"><button>登录/注册</button></a>
+<a id="first-a"   href="http://127.0.0.1:8080/Login" target="_blank" style="outline-style: dot-dash;
+    color: white;
+    background-color: lightskyblue;
+    text-decoration: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: none;
+    font-family: sans-serif;
+    cursor: pointer;" ><button>登录/注册</button></a>
+
+<a id="second-a" href="" style="outline-style: dot-dash;
+    color: white;
+    background-color: lightskyblue;
+    text-decoration: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: none;
+    font-family: sans-serif;
+    cursor: pointer;"><button>退出</button></a>
 
 <p th:text="${Reader.getReaderNo()}"></p>
 <p th:text="${Reader.getNumber()}"></p>
@@ -48,6 +68,21 @@
 <div class="fifth">
     <a href="" style="color: black"><img src="/Image/5.png">其他资料</a>
 </div>
+
+<script type="text/javascript">
+    var u1=document.getElementById("first-a");
+    var u2=document.getElementById("second-a");
+
+    u2.style.visibility="hidden";
+
+    u1.addEventListener("click",function () {
+        u2.style.visibility="visible";
+        u1.style.visibility="hidden";
+
+    })
+
+</script>
+
 
 
 </body>
