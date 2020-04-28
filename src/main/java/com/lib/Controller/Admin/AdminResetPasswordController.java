@@ -21,7 +21,6 @@ public class AdminResetPasswordController {
         return "Reset";
     }
 
-    @ResponseBody
     @RequestMapping(value = "/Admin/Login/ResetSubmit")
     public ModelAndView checkReset(String UserNo,String Password){
         ModelAndView modelAndView=new ModelAndView();

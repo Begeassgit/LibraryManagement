@@ -23,7 +23,6 @@ public class UserResetPasswordController {
         return "Reset";
     }
 
-    @ResponseBody
     @RequestMapping(value = "/Login/RestSubmit",method = RequestMethod.POST)
     public ModelAndView checkReset(String ReaderNo,String Password){
         ModelAndView modelAndView=new ModelAndView();

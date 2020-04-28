@@ -5,10 +5,10 @@
     <link href="/Home.css" type="text/css" rel="stylesheet">
     <title>图书馆管理系统</title>
 </head>
-<body>
+<body onload="loginCheck()">
 <div class="head">Library Management System</div>
 
-<a id="first-a"   href="http://127.0.0.1:8080/Login" target="_blank" style="outline-style: dot-dash;
+<a id="first-a" href="http://127.0.0.1:8080/Login" target="_self" style="outline-style: dot-dash;
     color: white;
     background-color: lightskyblue;
     text-decoration: none;
@@ -30,8 +30,8 @@
     font-family: sans-serif;
     cursor: pointer;"><button>退出</button></a>
 
-<p th:text="${Reader.getReaderNo()}"></p>
-<p th:text="${Reader.getNumber()}"></p>
+<p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
+<p id="Number" th:text="${Reader.getNumber()}"></p>
 
 <div class="content">
     <br><br><br><br><br><br>
@@ -70,20 +70,20 @@
 </div>
 
 <script type="text/javascript">
-    var u1=document.getElementById("first-a");
-    var u2=document.getElementById("second-a");
+    let readerNo=document.getElementById("ReaderNo").innerHTML;
+    let u1=document.getElementById("first-a");
+    let u2=document.getElementById("second-a");
 
     u2.style.visibility="hidden";
 
-    u1.addEventListener("click",function () {
-        u2.style.visibility="visible";
-        u1.style.visibility="hidden";
-
-    })
-
+    function loginCheck(){
+        if(readerNo!==""){
+            alert("登录成功");
+            u2.style.visibility="visible";
+            u1.style.visibility="hidden";
+        }
+    }
 </script>
-
-
 
 </body>
 </html>
