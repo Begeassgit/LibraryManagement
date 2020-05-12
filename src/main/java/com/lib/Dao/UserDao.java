@@ -18,10 +18,13 @@ public interface UserDao {
             "VALUES(#{ReaderNo},#{ReaderName},#{Age},#{Sex},#{Number},#{Identities},#{Password})")
     int registerDao(User user);
 
-    @Update("UPDATE lib_db.dbo.user_t(Password=#{Password}) WHERE (ReaderNo=#{ReaderNo})")
+    @Update("UPDATE lib_db.dbo.user_t SET(Password=#{Password}) WHERE (ReaderNo=#{ReaderNo})")
     int resetPasswordDao(String ReaderNo,String Password);
 
     @Select("SELECT * FROM lib_db.dbo.user_t WHERE(ReaderNo=#{ReaderNo})")
     User getInfoDao(String ReaderNo);
+
+    @Update("UPDATE lib_db.dbo.user_t SET(ReaderName=#{ReaderName},Age=#{Age},Sex=#{Sex},Identities=#{identities}) WHERE (ReaderNo=#{ReaderNo})")
+    int updateInfo(String ReaderName,short Age,String Sex,String Identities,String ReaderNo);
 
 }

@@ -31,11 +31,34 @@
     cursor: pointer;"><button>退出</button></a>
 
 <p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
-<p id="Number" th:text="${Reader.getNumber()}"></p>
+<p id="ReaderName" th:text="${Reader.getReaderName()}"></p>
+
+<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+</form>
+<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+</form>
+<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+</form><form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+</form>
+<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+</form>
+<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+</form>
+<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+</form>
+
+
 
 <div class="content">
     <br><br><br><br><br><br>
-    <a id="usermessage" href="MyMessage.html">我的信息</a><br>
+    <a id="usermessage" onclick="document.getElementById('message').submit()">我的信息</a><br>
     <a id="nowmessage" href="">正在借阅</a><br>
     <a id="hismessage" href="">历史借阅</a><br>
     <a id="payrmessage" href="">付费信息</a><br>
