@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url("Image/image.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+#total{
+    width: 800px;
+    height: 1000px;
+    background-color: rgba(97, 97, 101, 0.53);
+    line-height:100px;
+    margin: auto;
+}
+
+#first{
+    position: absolute;
+    top: 30px;
+    left: 500px;
+    height: 40px;
+    width: 500px;
+    line-height: 40px;
+
+}
+
+#second{
+    position: absolute;
+    top: 135px;
+    left: 500px;
+    height: 40px;
+    width: 500px;
+    line-height: 40px;
+}
+
+#third{
+    position: absolute;
+    top: 235px;
+    left: 500px;
+    height: 40px;
+    width: 500px;
+    line-height: 40px;
+}
+
+#forth{
+    position: absolute;
+    top: 340px;
+    left: 500px;
+    height: 40px;
+    width: 500px;
+}
+
+#fifth{
+    position: absolute;
+    top: 448px;
+    left: 500px;
+    height: 40px;
+    width: 500px;
+}
+
+#sixth{
+    position: absolute;
+    top: 550px;
+    left: 500px;
+    height: 40px;
+    width: 500px;
+}
+
+#user-sex-lable,#user-name-lable,#user-iden-lable,#user-age-lable,#user-id-label,#user-tel-lable{
+    font-size: 30px;
+    color: aqua;
+}
+
+
+input{
+    font-size: 25px;
+    text-align: center;
+}
+
+#seventh{
+    position: absolute;
+    top: 600px;
+    left: 700px;
+    width: 50px;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    color: #cd23ea;
+    border-radius: 20px;
+    cursor: pointer;
+}
