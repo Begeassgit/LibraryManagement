@@ -1,5 +1,6 @@
 body{
-    background-image:url("Image/bg3.png");
+    margin: 0;
+    background-image:url("Image/image3.webp");
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -13,15 +14,17 @@ a button:active{
 
 
 .head{
-    position: absolute;
+    position: fixed;
+    margin-left: 0;
+    padding-left: 0;
+    border: 0;
+    background-color: #009797;
     top: 0px;
-    left: 25%;
-    width: 800px;
+    width: 100%;
     height: 80px;
-    color: black;
-    text-align: center;
-    line-height: 80px;
-    font-size: 50px;
+    color: azure;
+    text-align: left;
+    font-size: 30px;
     animation: x 5s infinite alternate;
     -webkit-animation: x 5s infinite alternate;
 }
@@ -73,9 +76,10 @@ img{
 }
 
 .ss{
+    z-index: -1;
+    position: relative;
     width: 500px;
     height: 100px;
-    position: absolute;
     left: 300px;
     top:150px;
 }
@@ -90,7 +94,7 @@ img{
 }
 
 .first{
-    position: absolute;
+    z-index: -1;
     top: 200px;
     left: 200px;
     width: 40px;
@@ -99,16 +103,18 @@ img{
 }
 
 .first img{
+    z-index: -1;
     height:30px;
     width: 100%;
 }
 
 .first a{
+    z-index: -1;
     text-decoration: none;
 }
 
 .second{
-    position: absolute;
+    z-index: -1;
     top: 200px;
     left: 300px;
     width: 40px;
@@ -117,16 +123,18 @@ img{
 }
 
 .second img{
+    z-index: -1;
     height:30px;
     width: 100%;
 }
 
 .second a{
+    z-index: -1;
     text-decoration: none;
 }
 
 .third{
-    position: absolute;
+    z-index: -1;
     top: 200px;
     left: 400px;
     width: 40px;
@@ -135,16 +143,18 @@ img{
 }
 
 .third img{
+    z-index: -1;
     height:30px;
     width: 100%;
 }
 
 .third a{
+    z-index: -1;
     text-decoration: none;
 }
 
 .forth{
-    position: absolute;
+    z-index: -1;
     top: 200px;
     left: 500px;
     width: 40px;
@@ -153,16 +163,18 @@ img{
 }
 
 .forth img{
+    z-index: -1;
     height:30px;
     width: 100%;
 }
 
 .forth a{
+    z-index: -1;
     text-decoration: none;
 }
 
 .fifth{
-    position: absolute;
+    z-index: -1;
     top: 200px;
     left: 600px;
     width: 40px;
@@ -171,17 +183,87 @@ img{
 }
 
 .fifth img{
+    z-index: -1;
     height:30px;
     width: 100%;
 }
 
 .fifth a{
+    z-index: -1;
     text-decoration: none;
 }
 
 .first a:hover,.second a:hover,.third a:hover,.forth a:hover,.fifth a:hover{
     transform: scale(0.94);
 
+}
+.footer{
+    color: azure;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #009797;
+}
+.mainDiv{
+
+}
+.tips{
+    z-index: -1;
+    width: 300px;
+    position: relative;
+    left: 25%;
+}
+.loginTips{
+    top:25px;
+    right: 0;
+    margin-top: 0;
+    padding-top: 3px;
+    padding-right: 3px ;
+    outline-style: dot-dash;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    border: none;
+    font-family: sans-serif;
+    cursor: pointer;
+    font-size: 18px;
+}
+.userInfo{
+    top: 13px;
+    position: absolute;
+    right: 3%;
+}.userInfo p{
+     color: azure;
+     margin: 0;
+    padding: 3px;
+    font-size: 17px;
+ }
+.titleTipsBox{
+    position: absolute;
+    margin: 0;
+    padding:0;
+    left: 5%;
+    top: 0;
+}
+.titleTips{
+    font-family: 华文楷体;
+    margin: 0;
+    padding:0;
+}
+.titleTipsImag{
+    padding: 5px;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+}
+.titleImageBox{
+    position: absolute;
+}
+.titleTipsIn{
+    width: 300px;
+    position: absolute;
+    left: 70px;
 }
 
 

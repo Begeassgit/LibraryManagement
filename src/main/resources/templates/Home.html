@@ -3,89 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <link href="/Home.css" type="text/css" rel="stylesheet">
-    <title>图书馆管理系统</title>
+    <link rel="icon" type="image/png" href="/Image/library.png">
+    <title>加里敦大学图书馆</title>
 </head>
 <body onload="loginCheck()">
-<div class="head">Library Management System</div>
+    <div class="head">
+        <div class="titleTipsBox">
+            <div class="titleImageBox">
+                <img src="/Image/libraryIcon.png" class="titleTipsImag">
+            </div>
+            <div class="titleTipsIn">
+                <label class="titleTips">加里敦大学图书馆</label>
+                <h5 class="titleTips">Garleton University Library</h5>
+            </div>
+        </div>
+        <div class="userInfo">
+            <p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
+            <p id="ReaderName" th:text="${Reader.getReaderName()}"></p>
+        </div>
+        <div>
+            <a id="first-a" href="/Login" target="_self" class="loginTips">登录|注册</a>
+            <a id="second-a" href="/" class="loginTips">退出</a>
+        </div>
+    </div>
+    <div class="mainDiv">
+        <div>
+            <form hidden action="/MyAccount" method="post" id="message">
+                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+            </form>
+            <form hidden action="/MyBooks" method="get" id="lendingBooks">
+                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+            </form>
+            <form hidden action="/MyHistoryBooks" method="post" id="historyLending">
+                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+            </form>
+            <form hidden action="/MyCost" method="post" id="cost">
+                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+            </form>
+            <form hidden action="/LibraryRooms" method="get" id="rooms">
+                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+            </form>
+        </div>
 
-<a id="first-a" href="/Login" target="_self" style="outline-style: dot-dash;
-    color: white;
-    background-color: lightskyblue;
-    text-decoration: none;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    border: none;
-    font-family: sans-serif;
-    cursor: pointer;" ><button>登录/注册</button></a>
+        <div class="content">
+            <br><br><br><br><br><br>
+            <a id="user_message" onclick="document.getElementById('message').submit()">我的信息</a><br>
+            <a id="now_message" onclick="document.getElementById('lendingBooks').submit()">正在借阅</a><br>
+            <a id="his_message" onclick="document.getElementById('historyLending').submit()">历史借阅</a><br>
+            <a id="pay_message" onclick="document.getElementById('cost').submit()">付费信息</a><br>
+            <a id="lib_message" onclick="document.getElementById('rooms').submit()">馆室信息</a><br>
+        </div>
 
-<a id="second-a" href="/" style="outline-style: dot-dash;
-    color: white;
-    background-color: lightskyblue;
-    text-decoration: none;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    border: none;
-    font-family: sans-serif;
-    cursor: pointer;"><button>退出</button></a>
+        <div>
 
-<p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
-<p id="ReaderName" th:text="${Reader.getReaderName()}"></p>
+        </div>
+        <div class="ss">
+            <form action="" method="post" target="_blank">
+                <input type="text" class="inp" name="input">
+                <input type="submit"  value="搜索" class="ss-btn">
+            </form>
+        </div>
+        <div class="tips">
+            <div class="first">
+                <a href="" style="color: black"><img src="/Image/1.png">文学</a>
+            </div>
 
-<form hidden action="/MyAccount" method="post" id="message">
-    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-</form>
-<form hidden action="/MyBooks" method="get" id="lendingBooks">
-    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-</form>
-<form hidden action="/MyHistoryBooks" method="post" id="historyLending">
-    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-</form><form hidden action="/MyCost" method="post" id="cost">
-    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-</form>
-<form hidden action="/LibraryRooms" method="get" id="rooms">
-    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-</form>
+            <div class="second">
+                <a href="" style="color: black"><img src="/Image/2.png">报纸</a>
+            </div>
+
+            <div class="third">
+                <a href="" style="color: black"><img src="/Image/3.png">杂志</a>
+            </div>
+
+            <div class="forth">
+                <a href="" style="color: black"><img src="/Image/4.png">论文资料</a>
+            </div>
+
+            <div class="fifth">
+                <a href="" style="color: black"><img src="/Image/5.png">其他资料</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 山西财经大学|信息学院|17级计算机科学与技术班</p>
+    </div>
 
 
-
-<div class="content">
-    <br><br><br><br><br><br>
-    <a id="user_message" onclick="document.getElementById('message').submit()">我的信息</a><br>
-    <a id="now_message" onclick="document.getElementById('lendingBooks').submit()">正在借阅</a><br>
-    <a id="his_message" onclick="document.getElementById('historyLending').submit()">历史借阅</a><br>
-    <a id="pay_message" onclick="document.getElementById('cost').submit()">付费信息</a><br>
-    <a id="lib_message" onclick="document.getElementById('rooms').submit()">馆室信息</a><br>
-</div>
-
-<div class="ss">
-    <form action="" method="post" target="_blank">
-        <input type="text" class="inp">
-        <input type="submit"  value="搜索" class="ss-btn">
-    </form>
-</div>
-
-<div class="first">
-    <a href="" style="color: black"><img src="/Image/1.png">文学</a>
-</div>
-
-<div class="second">
-    <a href="" style="color: black"><img src="/Image/2.png">报纸</a>
-</div>
-
-<div class="third">
-    <a href="" style="color: black"><img src="/Image/3.png">杂志</a>
-</div>
-
-<div class="forth">
-    <a href="" style="color: black"><img src="/Image/4.png">论文资料</a>
-</div>
-
-<div class="fifth">
-    <a href="" style="color: black"><img src="/Image/5.png">其他资料</a>
-</div>
-
+</body>
 <script type="text/javascript">
     let readerNo=document.getElementById("ReaderNo").innerHTML;
     let u1=document.getElementById("first-a");
@@ -101,6 +106,4 @@
         }
     }
 </script>
-
-</body>
 </html>
