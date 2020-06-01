@@ -10,4 +10,7 @@ import java.util.List;
 public interface BookDao {
     @Select("SELECT * FROM lib_db.dbo.books_t WHERE (BookName=#{BookName})")
     List<Book> findBookByName(String BookName);
+
+    @Select("SELECT * FROM lib_db.dbo.books_t WHERE (Author=#{Author})")
+    List<Book> findBookByAuthor(String Author);
 }

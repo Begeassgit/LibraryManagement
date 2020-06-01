@@ -8,7 +8,7 @@
 <body onload="loginCheck()">
 <div class="head">Library Management System</div>
 
-<a id="first-a" href="http://127.0.0.1:8080/Login" target="_self" style="outline-style: dot-dash;
+<a id="first-a" href="/Login" target="_self" style="outline-style: dot-dash;
     color: white;
     background-color: lightskyblue;
     text-decoration: none;
@@ -19,7 +19,7 @@
     font-family: sans-serif;
     cursor: pointer;" ><button>登录/注册</button></a>
 
-<a id="second-a" href="http://127.0.0.1:8080/" style="outline-style: dot-dash;
+<a id="second-a" href="/" style="outline-style: dot-dash;
     color: white;
     background-color: lightskyblue;
     text-decoration: none;
@@ -33,24 +33,18 @@
 <p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
 <p id="ReaderName" th:text="${Reader.getReaderName()}"></p>
 
-<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+<form hidden action="/MyAccount" method="post" id="message">
     <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
 </form>
-<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+<form hidden action="/MyBooks" method="get" id="lendingBooks">
     <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
 </form>
-<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+<form hidden action="/MyHistoryBooks" method="post" id="historyLending">
     <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-</form><form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
-    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-</form>
-<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+</form><form hidden action="/MyCost" method="post" id="cost">
     <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
 </form>
-<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
-    <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-</form>
-<form hidden action="http://127.0.0.1:8080/MyAccount" method="post" id="message">
+<form hidden action="/LibraryRooms" method="get" id="rooms">
     <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
 </form>
 
@@ -58,11 +52,11 @@
 
 <div class="content">
     <br><br><br><br><br><br>
-    <a id="usermessage" onclick="document.getElementById('message').submit()">我的信息</a><br>
-    <a id="nowmessage" href="">正在借阅</a><br>
-    <a id="hismessage" href="">历史借阅</a><br>
-    <a id="payrmessage" href="">付费信息</a><br>
-    <a id="libmessage" href="">馆室信息</a><br>
+    <a id="user_message" onclick="document.getElementById('message').submit()">我的信息</a><br>
+    <a id="now_message" onclick="document.getElementById('lendingBooks').submit()">正在借阅</a><br>
+    <a id="his_message" onclick="document.getElementById('historyLending').submit()">历史借阅</a><br>
+    <a id="pay_message" onclick="document.getElementById('cost').submit()">付费信息</a><br>
+    <a id="lib_message" onclick="document.getElementById('rooms').submit()">馆室信息</a><br>
 </div>
 
 <div class="ss">

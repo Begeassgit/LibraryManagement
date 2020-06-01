@@ -1,8 +1,7 @@
-package com.lib.Service.Lend;
+package com.lib.Service.Cost;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class MyLendService {
-
+public class MyCostService {
 }

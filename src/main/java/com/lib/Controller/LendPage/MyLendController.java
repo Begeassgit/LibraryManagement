@@ -1,13 +1,13 @@
 package com.lib.Controller.LendPage;
 
-import com.lib.Service.Lend.MyLendService;
+import com.lib.Service.Borrow.MyBorrowService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyLendController {
-    private final MyLendService myLendService;
+    private final MyBorrowService myLendService;
 
-    public MyLendController(MyLendService myLendService){
+    public MyLendController(MyBorrowService myLendService){
         this.myLendService=myLendService;
     }
 }
