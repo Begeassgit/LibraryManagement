@@ -1,5 +1,7 @@
 package com.lib.Controller.MainPage;
-
+/*
+    Author:Yin
+*/
 import com.lib.Service.MainPage.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

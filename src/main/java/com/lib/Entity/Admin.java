@@ -1,5 +1,7 @@
 package com.lib.Entity;
-
+/*
+    Author:Yin
+*/
 public class Admin {
     private String UserNo;
     private String UserName;
