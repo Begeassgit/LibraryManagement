@@ -91,100 +91,101 @@
         </section>
         <section id="faq" class="faq section-bg">
             <div class="container">
-                <div class="section-title">
-                    <h2>通知</h2>
-                </div>
                 <div class="row  d-flex align-items-stretch">
 
                     <div class="col-lg-6 faq-item" data-aos="fade-up">
-                        <h4 th:text=""></h4>
-                        <p th:text=""></p>
+                        <h4 th:text="${'通知'}"></h4>
+                        <p th:text="${'通知'}"></p>
                     </div>
                     <div class="col-lg-6 faq-item" data-aos="fade-up">
-                        <h4 th:text=""></h4>
-                        <p th:text=""></p>
-                    </div>
-
-                    <div class="col-lg-6 faq-item" data-aos="fade-up">
-                        <h4 th:text=""></h4>
-                        <p th:text=""></p>
+                        <h4 th:text="${'通知'}"></h4>
+                        <p th:text="${'通知'}"></p>
                     </div>
 
                     <div class="col-lg-6 faq-item" data-aos="fade-up">
-                        <h4 th:text=""></h4>
-                        <p th:text=""></p>
+                        <h4 th:text="${'通知'}"></h4>
+                        <p th:text="${'通知'}"></p>
                     </div>
 
                     <div class="col-lg-6 faq-item" data-aos="fade-up">
-                        <h4 th:text=""></h4>
-                        <p th:text=""></p>
+                        <h4 th:text="${'通知'}"></h4>
+                        <p th:text="${'通知'}"></p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item" data-aos="fade-up">
+                        <h4 th:text="${'通知'}"></h4>
+                        <p th:text="${'通知'}"></p>
                     </div>
 
                     <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="500">
-                        <h4 th:text=""></h4>
-                        <p th:text=""></p>
+                        <h4 th:text="${'通知'}"></h4>
+                        <p th:text="${'通知'}"></p>
                     </div>
                 </div>
             </div>
         </section>
         <section id="libInfo" class="faq section-bg" style="background-color: #6c757d">
             <div class="container">
-                <div class="section-title" style="color: azure">
-                    <h2>馆室信息</h2>
-                </div>
                 <div class="row  d-flex align-items-stretch">
-                    <div class="col-lg-6 faq-item">
-                        <h4>本馆地址</h4>
-                        <p>
-
-                        </p>
+                    <div class="col-lg-3 faq-items">
+                        <h4>本馆信息</h4>
+                        <p th:text="${'地址：'+Room.get(0).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(0).getTel()}"></p>
+                        <p th:text="${'开放时间：'+Room.get(0).getTime()}"></p>
+                        <p th:text="${Room.get(0).getTimeSep()}"></p>
                     </div>
-                    <div class="col-lg-6 faq-item">
-                        <h4>本馆工作时间</h4>
-                        <p>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-6 faq-item">
-                        <h4>101社会科学阅览室</h4>
-                        <p>
-                        </p>
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(1).getRoomName()}"></h4>
+                        <p th:text="${'地址：'+Room.get(1).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(1).getTel()}"></p>
                     </div>
 
-                    <div class="col-lg-6 faq-item">
-                        <h4>102书报室</h4>
-                        <p>
-                        </p>
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(2).getRoomName()}"></h4>
+                        <p th:text="${'地址：'+Room.get(2).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(2).getTel()}"></p>
                     </div>
 
-                    <div class="col-lg-6 faq-item">
-                        <h4>202</h4>
-                        <p>
-                        </p>
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(3).getRoomName()}"></h4>
+                        <p th:text="${'地址：'+Room.get(3).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(3).getTel()}"></p>
                     </div>
 
-                    <div class="col-lg-6 faq-item">
-                        <h4>301</h4>
-                        <p>
-                        </p>
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(4).getRoomName()}"></h4>
+                        <p th:text="${'地址：'+Room.get(4).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(4).getTel()}"></p>
                     </div>
 
-                    <div class="col-lg-6 faq-item">
-                        <h4>301</h4>
-                        <p>
-                        </p>
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(5).getRoomName()}"></h4>
+                        <p th:text="${'地址：'+Room.get(5).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(5).getTel()}"></p>
                     </div>
 
-                    <div class="col-lg-6 faq-item">
-                        <h4>301</h4>
-                        <p>
-                        </p>
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(6).getRoomName()}"></h4>
+                        <p th:text="${'地址：'+Room.get(6).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(6).getTel()}"></p>
                     </div>
 
-                    <div class="col-lg-6 faq-item">
-                        <h4>301</h4>
-                        <p>
-                        </p>
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(7).getRoomName()}"></h4>
+                        <p th:text="${'地址'+Room.get(7).getRoomAddress()}"></p>
+                        <p th:text="${'电话'+Room.get(7).getTel()}"></p>
+                    </div>
+
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(8).getRoomName()}"></h4>
+                        <p th:text="${'地址：'+Room.get(8).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(8).getTel()}"></p>
+                    </div>
+
+                    <div class="col-lg-3 faq-items">
+                        <h4 th:text="${Room.get(9).getRoomName()}"></h4>
+                        <p th:text="${'地址：'+Room.get(9).getRoomAddress()}"></p>
+                        <p th:text="${'电话：'+Room.get(9).getTel()}"></p>
                     </div>
 
                 </div>
@@ -215,7 +216,7 @@
     }
 
     function submitForm(i) {
-        let th=document.getElementById('inputForm')
+        let th=document.getElementById('inputForm');
         if(i===1){
             th.action="/SearchByName";
         }
