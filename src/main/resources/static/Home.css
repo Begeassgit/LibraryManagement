@@ -1,8 +1,5 @@
 body{
     margin: 0;
-    background-image:url("Image/image3.webp");
-    background-repeat: no-repeat;
-    background-size: 100%;
 }
 
 a button:link{
@@ -12,14 +9,14 @@ a button:active{
     color: #ff252a;
 }
 
-
 .head{
-    position: fixed;
+    position: absolute;
     margin-left: 0;
     padding-left: 0;
     border: 0;
-    background-color: #009797;
+    background-color: #464646;
     top: 0px;
+    left: 0;
     width: 100%;
     height: 80px;
     color: azure;
@@ -39,17 +36,6 @@ a button:active{
     text-align: center;
     line-height: 30px;
 }
-
-#hismessage,#libmessage,#payrmessage,#nowmessage,#usermessage{
-    text-decoration: none;
-    color: white;
-
-}
-
-#hismessage:hover,#libmessage:hover,#payrmessage:hover,#nowmessage:hover,#usermessage:hover{
-    color: #dbf810;
-}
-
 img{
     width: 20px;
     height: 20px;
@@ -76,134 +62,42 @@ img{
 }
 
 .ss{
-    z-index: -1;
-    position: relative;
-    width: 500px;
+    position: absolute;
+    width: 400px;
     height: 100px;
-    left: 300px;
-    top:150px;
+    left: 361px;
+    top:267px;
 }
 
 .inp{
-    height: 20px;
-    width: 400px;
+    color: azure;
+    font-size: 20px;
+    border-radius: 30px;
+    height: 35px;
+    width: 323px;
 }
 
 .ss-btn{
-   background-color: white;
+    margin-top:13px;
+    border: 0;
+    font-family: 华文楷体, serif;
+    padding: 3px;
+    font-size: 31px;
+    color: azure;
+    background-color: transparent;
 }
 
-.first{
-    z-index: -1;
-    top: 200px;
-    left: 200px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
-}
-
-.first img{
-    z-index: -1;
-    height:30px;
-    width: 100%;
-}
-
-.first a{
-    z-index: -1;
-    text-decoration: none;
-}
-
-.second{
-    z-index: -1;
-    top: 200px;
-    left: 300px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
-}
-
-.second img{
-    z-index: -1;
-    height:30px;
-    width: 100%;
-}
-
-.second a{
-    z-index: -1;
-    text-decoration: none;
-}
-
-.third{
-    z-index: -1;
-    top: 200px;
-    left: 400px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
-}
-
-.third img{
-    z-index: -1;
-    height:30px;
-    width: 100%;
-}
-
-.third a{
-    z-index: -1;
-    text-decoration: none;
-}
-
-.forth{
-    z-index: -1;
-    top: 200px;
-    left: 500px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
-}
-
-.forth img{
-    z-index: -1;
-    height:30px;
-    width: 100%;
-}
-
-.forth a{
-    z-index: -1;
-    text-decoration: none;
-}
-
-.fifth{
-    z-index: -1;
-    top: 200px;
-    left: 600px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
-}
-
-.fifth img{
-    z-index: -1;
-    height:30px;
-    width: 100%;
-}
-
-.fifth a{
-    z-index: -1;
-    text-decoration: none;
-}
-
-.first a:hover,.second a:hover,.third a:hover,.forth a:hover,.fifth a:hover{
-    transform: scale(0.94);
-
-}
 .footer{
     color: azure;
     text-align: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
-    background-color: #009797;
+    background-color: #464646;
+}
+.footer p{
+    margin: 0;
+    padding: 0;
 }
 .mainDiv{
 
@@ -216,7 +110,7 @@ img{
 }
 .loginTips{
     top:25px;
-    right: 0;
+    right: 19%;
     margin-top: 0;
     padding-top: 3px;
     padding-right: 3px ;
@@ -232,18 +126,25 @@ img{
 .userInfo{
     top: 13px;
     position: absolute;
-    right: 3%;
-}.userInfo p{
+    right: 22%;
+}
+.userInfo p{
      color: azure;
      margin: 0;
     padding: 3px;
     font-size: 17px;
  }
+.userInfo a{
+    color: azure;
+    margin: 0;
+    padding: 3px;
+    font-size: 17px;
+}
 .titleTipsBox{
     position: absolute;
     margin: 0;
     padding:0;
-    left: 5%;
+    left: 19%;
     top: 0;
 }
 .titleTips{
@@ -264,6 +165,120 @@ img{
     width: 300px;
     position: absolute;
     left: 70px;
+}
+.viewBox{
+    top: 80px;
+    position: relative;
+}
+.viewBox img{
+    width: 1903px;
+    position: relative;
+    height: auto;
+}
+.title{
+    margin: 0;
+    padding: 0;
+    color: azure;
+    font-family: 华文楷体, serif;
+    font-size: 45px;
+}
+.jump{
+    right: 30%;
+    top: 24px;
+    font-family: 华文楷体,serif;
+    font-size: 29px;
+    float: left;
+    position: absolute;
+}
+.jump a{
+    color: azure;
+    outline: none;
+    text-decoration-line: none;
+}
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services {
+    padding-bottom: 30px;
+}
+
+.services .icon-box {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.services .icon {
+    display: flex;
+    justify-content: center;
+}
+
+.services .icon i {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.5s;
+    color: #428bca;
+    font-size: 40px;
+    overflow: hidden;
+    padding-top: 20px;
+    box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.services .icon-box:hover .icon i {
+    box-shadow: 0px 0 30px rgba(66, 139, 202, 0.5);
+}
+
+.services .title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.services .title a {
+    color: #444;
+    transition: 0.3s;
+}
+
+.services .title a:hover {
+    color: #428bca;
+}
+
+.services .title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #428bca;
+    bottom: 0;
+    left: calc(50% - 25px);
+}
+
+.services .description {
+    line-height: 24px;
+    font-size: 14px;
+}
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+.faq {
+    padding-bottom: 30px;
+}
+
+.faq .faq-item {
+    margin-bottom: 40px;
+}
+
+.faq .faq-item h4 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1f3548;
 }
 
 

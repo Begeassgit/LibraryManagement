@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="/Home.css" type="text/css" rel="stylesheet">
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link href="/icofont.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/Image/library.png">
     <title>加里敦大学图书馆</title>
 </head>
@@ -17,9 +19,14 @@
                 <h5 class="titleTips">Garleton University Library</h5>
             </div>
         </div>
+        <div class="jump">
+            <a href="#libInfo">馆室信息</a>
+            <a  href="#faq">通知</a>
+            <a  href="#services">探索</a>
+        </div>
         <div class="userInfo">
             <p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
-            <p id="ReaderName" th:text="${Reader.getReaderName()}"></p>
+            <p id="ReaderName" th:text="${Reader.getReaderName()}" onclick="document.getElementById('message').submit()"></p>
         </div>
         <div>
             <a id="first-a" href="/Login" target="_self" class="loginTips">登录|注册</a>
@@ -31,62 +38,163 @@
             <form hidden action="/MyAccount" method="post" id="message">
                 <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
             </form>
-            <form hidden action="/MyBooks" method="get" id="lendingBooks">
-                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-            </form>
-            <form hidden action="/MyHistoryBooks" method="post" id="historyLending">
-                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-            </form>
-            <form hidden action="/MyCost" method="post" id="cost">
-                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-            </form>
-            <form hidden action="/LibraryRooms" method="get" id="rooms">
-                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
-            </form>
         </div>
-
-        <div class="content">
-            <br><br><br><br><br><br>
-            <a id="user_message" onclick="document.getElementById('message').submit()">我的信息</a><br>
-            <a id="now_message" onclick="document.getElementById('lendingBooks').submit()">正在借阅</a><br>
-            <a id="his_message" onclick="document.getElementById('historyLending').submit()">历史借阅</a><br>
-            <a id="pay_message" onclick="document.getElementById('cost').submit()">付费信息</a><br>
-            <a id="lib_message" onclick="document.getElementById('rooms').submit()">馆室信息</a><br>
-        </div>
-
-        <div>
-
-        </div>
-        <div class="ss">
-            <form action="" method="post" target="_blank">
-                <input type="text" class="inp" name="input">
-                <input type="submit"  value="搜索" class="ss-btn">
-            </form>
-        </div>
-        <div class="tips">
-            <div class="first">
-                <a href="" style="color: black"><img src="/Image/1.png">文学</a>
-            </div>
-
-            <div class="second">
-                <a href="" style="color: black"><img src="/Image/2.png">报纸</a>
-            </div>
-
-            <div class="third">
-                <a href="" style="color: black"><img src="/Image/3.png">杂志</a>
-            </div>
-
-            <div class="forth">
-                <a href="" style="color: black"><img src="/Image/4.png">论文资料</a>
-            </div>
-
-            <div class="fifth">
-                <a href="" style="color: black"><img src="/Image/5.png">其他资料</a>
+        <div class="viewBox">
+            <img class="viewImg" src="/Image/slide-2.jpg" >
+            <div class="ss">
+                <form action="" method="post" target="_blank" id="inputForm">
+                    <h4 class="title">检索图书</h4>
+                    <input type="text" class="inp" name="input">
+                </form>
+                <a onclick="submitForm(1)"  class="btn btn-light ss-btn">按书名搜索</a>
+                <a onclick="submitForm(0)"  class="btn btn-light ss-btn">按作者搜索</a>
             </div>
         </div>
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Services</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="icofont-notebook"></i></div>
+                        <h4 class="title"><a href="">文学</a></h4>
+                        <p class="description">诗歌 散文 小说 剧本 寓言 童话</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="icofont-book-alt"></i></div>
+                        <h4 class="title"><a href="">论文期刊</a></h4>
+                        <p class="description">中文期刊 中文会议 外文期刊 外文会议 外文学位 政府科技报告</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="icofont-newspaper"></i></div>
+                        <h4 class="title"><a href="">报纸</a></h4>
+                        <p class="description">中国经济周报合辑 南方时报合辑</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="icofont-magento"></i></div>
+                        <h4 class="title"><a href="">杂志</a></h4>
+                        <p class="description">生活时尚 汽车 航空 科学 人文</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="icofont-mathematical"></i></div>
+                        <h4 class="title"><a href="">教材</a></h4>
+                        <p class="description">十二五国家精选教材 USCC教材</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="icofont-file-file"></i></div>
+                        <h4 class="title"><a href="">参考资料</a></h4>
+                        <p class="description">理科 工科 商学 政治</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="faq" class="faq section-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>通知</h2>
+                </div>
+                <div class="row  d-flex align-items-stretch">
+
+                    <div class="col-lg-6 faq-item" data-aos="fade-up">
+                        <h4 th:text=""></h4>
+                        <p th:text=""></p>
+                    </div>
+                    <div class="col-lg-6 faq-item" data-aos="fade-up">
+                        <h4 th:text=""></h4>
+                        <p th:text=""></p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item" data-aos="fade-up">
+                        <h4 th:text=""></h4>
+                        <p th:text=""></p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item" data-aos="fade-up">
+                        <h4 th:text=""></h4>
+                        <p th:text=""></p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item" data-aos="fade-up">
+                        <h4 th:text=""></h4>
+                        <p th:text=""></p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="500">
+                        <h4 th:text=""></h4>
+                        <p th:text=""></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="libInfo" class="faq section-bg" style="background-color: #6c757d">
+            <div class="container">
+                <div class="section-title" style="color: azure">
+                    <h2>馆室信息</h2>
+                </div>
+                <div class="row  d-flex align-items-stretch">
+                    <div class="col-lg-6 faq-item">
+                        <h4>本馆地址</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div class="col-lg-6 faq-item">
+                        <h4>本馆工作时间</h4>
+                        <p>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item">
+                        <h4>101社会科学阅览室</h4>
+                        <p>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item">
+                        <h4>102书报室</h4>
+                        <p>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item">
+                        <h4>202</h4>
+                        <p>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item">
+                        <h4>301</h4>
+                        <p>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item">
+                        <h4>301</h4>
+                        <p>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item">
+                        <h4>301</h4>
+                        <p>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 faq-item">
+                        <h4>301</h4>
+                        <p>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
     </div>
     <div class="footer">
         <p>Copyright © 山西财经大学|信息学院|17级计算机科学与技术班</p>
+        <p>工信部 网备 109000123号</p>
     </div>
 
 
@@ -104,6 +212,17 @@
             u2.style.visibility="visible";
             u1.style.visibility="hidden";
         }
+    }
+
+    function submitForm(i) {
+        let th=document.getElementById('inputForm')
+        if(i===1){
+            th.action="/SearchByName";
+        }
+        else {
+            th.action="/SearchByAuthor";
+        }
+        th.submit();
     }
 </script>
 </html>
