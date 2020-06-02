@@ -20,7 +20,7 @@ public class AboutRoomController {
     public ModelAndView roomInfoPage(){
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("RoomMessage");
-        modelAndView.addObject("roomList",roomService.getRoomInfo());
+        modelAndView.addObject("roomList",roomService.getRoomInfoService());
         return modelAndView;
     }
 }

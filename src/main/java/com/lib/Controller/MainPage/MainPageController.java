@@ -3,6 +3,7 @@ package com.lib.Controller.MainPage;
     Author:Yin
 */
 import com.lib.Entity.User;
+import com.lib.Service.Notice.NoticeService;
 import com.lib.Service.Room.RoomService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,10 @@ import java.util.Map;
 public class MainPageController {
 
     private final RoomService roomService;
+    private final NoticeService noticeService;
 
-    public MainPageController(RoomService roomService){
+    public MainPageController(RoomService roomService,NoticeService noticeService){
+        this.noticeService=noticeService;
         this.roomService=roomService;
     }
 
@@ -26,7 +29,8 @@ public class MainPageController {
         User user=new User();
         ModelAndView modelAndView=new ModelAndView();
         map.put("Reader",user);
-        map.put("Room",roomService.getRoomInfo());
+        map.put("Room",roomService.getRoomInfoService());
+        map.put("Notice",noticeService.getNoticeInfoService());
         modelAndView.setViewName("Home");
         modelAndView.addAllObjects(map);
         return modelAndView;

@@ -19,7 +19,7 @@ public class RoomService {
     }
 
     /*查询馆室信息*/
-    public List<Room> getRoomInfo(){
+    public List<Room> getRoomInfoService(){
         return roomDao.getRoomInfo();
     }
 }
