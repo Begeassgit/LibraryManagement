@@ -171,7 +171,7 @@ img{
     position: relative;
 }
 .viewBox img{
-    width: 1903px;
+    width: 100%;
     position: relative;
     height: auto;
 }
