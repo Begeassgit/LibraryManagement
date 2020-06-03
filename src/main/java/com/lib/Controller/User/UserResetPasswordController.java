@@ -15,7 +15,6 @@ public class UserResetPasswordController {
 
     private final UserAccountService userAccountService;
 
-    @Autowired(required = false)
     public UserResetPasswordController(UserAccountService userAccountService){
         this.userAccountService=userAccountService;
     }

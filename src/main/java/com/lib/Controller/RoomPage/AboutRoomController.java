@@ -16,10 +16,10 @@ public class AboutRoomController {
         this.roomService=roomService;
     }
 
-    @RequestMapping(value = "/LibraryRooms")
+    @RequestMapping(value = "/Admin/LibraryRooms")
     public ModelAndView roomInfoPage(){
         ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("RoomMessage");
+        modelAndView.setViewName("");
         modelAndView.addObject("roomList",roomService.getRoomInfoService());
         return modelAndView;
     }

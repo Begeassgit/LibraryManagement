@@ -42,19 +42,17 @@
         <div class="viewBox">
             <img class="viewImg" src="/Image/slide-2.jpg" >
             <div class="ss">
-                <form action="" method="post" target="_blank" id="inputForm">
+                <form action="/Search" method="post" target="_blank" id="inputForm">
                     <h4 class="title">检索图书</h4>
                     <input type="text" class="inp" name="input">
+                    <input type="hidden" value="" name="type" id="inputType">
                 </form>
-                <a onclick="submitForm(1)"  class="btn btn-light ss-btn">按书名搜索</a>
-                <a onclick="submitForm(0)"  class="btn btn-light ss-btn">按作者搜索</a>
+                <a onclick="submitForm(1);document.getElementById('inputForm').submit();"  class="btn btn-light ss-btn">按书名搜索</a>
+                <a onclick="submitForm(0);document.getElementById('inputForm').submit();"  class="btn btn-light ss-btn">按作者搜索</a>
             </div>
         </div>
         <section id="services" class="services">
             <div class="container">
-                <div class="section-title">
-                    <h2>Services</h2>
-                </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-notebook"></i></div>
@@ -64,7 +62,7 @@
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-book-alt"></i></div>
                         <h4 class="title"><a href="">论文期刊</a></h4>
-                        <p class="description">中文期刊 中文会议 外文期刊 外文会议 外文学位 政府科技报告</p>
+                        <p class="description">中文期刊 中文会议 外文期刊 外文会议 外文学位</p>
                     </div>
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-newspaper"></i></div>
@@ -216,14 +214,12 @@
     }
 
     function submitForm(i) {
-        let th=document.getElementById('inputForm');
         if(i===1){
-            th.action="/SearchByName";
+            document.getElementById('inputType').value=1;
         }
         else {
-            th.action="/SearchByAuthor";
+            document.getElementById('inputType').value=0;
         }
-        th.submit();
     }
 </script>
 </html>

@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminResetPasswordController {
     private final AdminAccountService adminAccountService;
 
-    @Autowired(required = false)
     public AdminResetPasswordController(AdminAccountService adminAccountService){
         this.adminAccountService=adminAccountService;
     }

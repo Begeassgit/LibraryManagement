@@ -18,8 +18,17 @@ public class SearchService {
         this.bookDao=bookDao;
     }
 
+    //按书名模糊查找
     public List<Book> searchByName(String BookName){
         String getName="%"+BookName+"%";
         return bookDao.findBookByName(getName);
     }
+
+    //按作者模糊查找
+    public List<Book> searchByAuthor(String Author){
+        String getAuthor="%"+Author+"%";
+        return bookDao.findBookByAuthor(getAuthor);
+    }
+
+
 }

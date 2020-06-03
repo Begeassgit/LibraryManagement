@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -22,11 +21,22 @@ public class SearchController {
         this.searchService=searchService;
     }
 
-    @RequestMapping(value = "/SearchByName",method = RequestMethod.POST)
-    public ModelAndView searchResult(String input){
+    @RequestMapping(value = "/Search",method = RequestMethod.POST)
+    public ModelAndView searchResult(String input,int type){
         ModelAndView modelAndView=new ModelAndView();
         Map<String,Object>map =new HashMap<>();
-        map.put("BookList","");
+        switch (type){
+            case 1:{
+                map.put("BookList",searchService.searchByName(input));
+            } break;
+            case 2:{
+                map.put("BookList",searchService.searchByAuthor(input));
+            } break;
+            default:{
+                map.put("BookList",null);
+            }
+        }
+        modelAndView.setViewName("");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/Home.css" type="text/css" rel="stylesheet">
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link href="/icofont.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/Image/library.png">
+    <title>加里敦大学图书馆</title>
+</head>
+<body>
+<div class="head">
+    <div class="titleTipsBox">
+        <div class="titleImageBox">
+            <img src="/Image/libraryIcon.png" class="titleTipsImag">
+        </div>
+        <div class="titleTipsIn">
+            <label class="titleTips">加里敦大学图书馆</label>
+            <h5 class="titleTips">Garleton University Library</h5>
+        </div>
+    </div>
+    <div class="userInfo">
+        <p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
+        <p id="ReaderName" th:text="${Reader.getReaderName()}" onclick="document.getElementById('message').submit()"></p>
+    </div>
+    <div>
+        <a id="first-a" href="/Login" target="_self" class="loginTips">登录|注册</a>
+        <a id="second-a" href="/" class="loginTips">退出</a>
+    </div>
+</div>
+</body>
+</html>

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AdminRegisterController {
     private final AdminAccountService adminAccountService;
 
-    @Autowired(required = false)
     public AdminRegisterController(AdminAccountService adminAccountService){
         this.adminAccountService=adminAccountService;
     }

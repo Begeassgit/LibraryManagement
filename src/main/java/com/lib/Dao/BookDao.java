@@ -10,9 +10,12 @@ import java.util.List;
 
 @Mapper
 public interface BookDao {
+
+    //书名查找
     @Select("SELECT * FROM lib_db.dbo.books_t WHERE (BookName=#{BookName})")
     List<Book> findBookByName(String BookName);
 
+    //作者名查找
     @Select("SELECT * FROM lib_db.dbo.books_t WHERE (Author=#{Author})")
     List<Book> findBookByAuthor(String Author);
 }

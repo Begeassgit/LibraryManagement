@@ -15,7 +15,7 @@ public class UserInfoController {
 
     private final UserInfoService userInfoService;
 
-    @Autowired(required = false)
+
     public UserInfoController(UserInfoService userInfoService){
         this.userInfoService=userInfoService;
     }
