@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class AdminLoginController {
     private final AdminAccountService adminAccountService;
@@ -27,13 +29,14 @@ public class AdminLoginController {
 
     /*管理员登录信息提交API*/
     @RequestMapping(value = "/Admin/Check",method = RequestMethod.POST)
-    public ModelAndView checkAdminLogin(String UserNo, String Password){
+    public ModelAndView checkAdminLogin(String UserNo, String Password, HttpSession session){
         ModelAndView modelAndView=new ModelAndView();
         Admin temp=adminAccountService.loginAdminService(UserNo, Password);
         if(temp==null){
-            modelAndView.setViewName("Home");
+            modelAndView.setViewName("AdminLogin");
         }
         else{
+            session.setAttribute("AdminSession",temp);
             modelAndView.setViewName("AdminIndex");
             modelAndView.addObject("Admin",temp);
         }

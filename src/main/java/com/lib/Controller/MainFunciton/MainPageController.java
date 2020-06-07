@@ -1,4 +1,4 @@
-package com.lib.Controller.MainPage;
+package com.lib.Controller.MainFunciton;
 /*
     Author:Yin
 */
@@ -7,6 +7,7 @@ import com.lib.Service.Notice.NoticeService;
 import com.lib.Service.Room.RoomService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -23,7 +24,7 @@ public class MainPageController {
         this.roomService=roomService;
     }
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/",method = RequestMethod.GET)
     public ModelAndView mainPage(){
         Map<String,Object> map=new HashMap<>();
         User user=new User();

@@ -1,4 +1,4 @@
-package com.lib.Controller.RoomPage;
+package com.lib.Controller.MainFunciton;
 /*
     Author:Yin
 */
@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class AboutRoomController {
+public class RoomManageController {
 
     private final RoomService roomService;
 
-    public AboutRoomController(RoomService roomService){
+    public RoomManageController(RoomService roomService){
         this.roomService=roomService;
     }
 
-    @RequestMapping(value = "/Admin/LibraryRooms")
-    public ModelAndView roomInfoPage(){
+    @RequestMapping(value = "/Admin/RoomsManage")
+    public ModelAndView roomManagePage(){
         ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("");
+        modelAndView.setViewName("RoomManage");
         modelAndView.addObject("roomList",roomService.getRoomInfoService());
         return modelAndView;
     }

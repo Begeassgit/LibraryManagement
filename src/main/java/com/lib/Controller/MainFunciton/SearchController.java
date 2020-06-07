@@ -1,8 +1,8 @@
-package com.lib.Controller.MainPage;
+package com.lib.Controller.MainFunciton;
 /*
     Author:Yin
 */
-import com.lib.Service.MainPage.SearchService;
+import com.lib.Service.MainFunction.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>管理员中心</title>
+    <link rel="stylesheet" type="text/css" href="../common.css"/>
+    <link rel="stylesheet" type="text/css" href="../main.css"/>
+    <script type="text/javascript" src="../js/libs/modernizr.min.js"></script>
+</head>
+<body>
+<div class="topbar-wrap white">
+    <!--<div class="topbar-inner clearfix">-->
+    <div class="topbar-logo-wrap clearfix">
+        <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">管理员中心</a></h1>
+    </div>
+</div>
+</div>
+<div class="container clearfix">
+    <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>选项</h1>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-list">
+                <li>
+                    <ul class="sub-menu">
+                        <li><a href="/Admin/Index">还借处理</a></li>
+                        <li><a href="/Admin/BookManage">图书管理</a></li>
+                        <li><a href="/Admin/UserManage">用户管理</a></li>
+                        <li><a href="/Admin/RoomsManage">馆室管理</a></li>
+                        <li><a href="/Admin/Notice">通知管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--/sidebar-->
+<div class="main-wrap">
+
+    <div class="crumb-wrap">
+        <div class="crumb-list"><i class="icon-font"></i><a href="home.html" color="#white">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户查询</span></div>
+    </div>
+    <div class="search-wrap">
+        <div class="search-content">
+            <form action="#" method="post">
+                <table class="search-tab">
+                    <tr>
+                        <th width="120">选择分类:</th>
+                        <td>
+                            <select name="search-sort" id="">
+                                <option value="">全部</option>
+                                <option value="19">运动健身</option>
+                                <option value="20">旅游</option>
+                                <option value="21">文学艺术</option>
+                                <option value="22">演讲</option>
+                                <option value="23">经济</option>
+                                <option value="24">电影</option>
+                                <option value="25">科技</option>
+                                <option value="26">美食</option>
+                            </select>
+                        </td>
+                        <th width="70">关键字:</th>
+                        <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
+                        <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+<div class="result-wrap">
+    <form name="myform" id="myform" method="post">
+        <div class="result-title">
+            <div class="result-list">
+                <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
+                <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+            </div>
+        </div>
+        <div class="result-content">
+            <table class="result-tab" width="100%">
+                <tr>
+                    <th class="tc" width="5%"></th>
+                    <th>编号ID</th>
+                    <th>图书名称</th>
+                    <th>库存量</th>
+                    <th>借阅量</th>
+                    <th>出版时间</th>
+                    <th>价格</th>
+                </tr>
+                <tr>
+                    <td class="tc"><input name="id[]" value="" type="checkbox"></td>
+                    <td>01</td>
+                    <td>百科全书</td>
+                    <td>10</td>
+                    <td>05</td>
+                    <td>2014</td>
+                    <td>100元</td>
+                </tr>
+                <tr>
+                    <td class="tc"><input name="id[]" value="" type="checkbox"></td>
+                    <td>01</td>
+                    <td>百科全书</td>
+                    <td>10</td>
+                    <td>05</td>
+                    <td>2014</td>
+                    <td>100元</td>
+                </tr>
+            </table>
+            <div class="list-page"> 2 条 1/1 页</div>
+        </div>
+    </form>
+</div>
+</div>
+    <!--/main-->
+</div>
+</body>
+</html>
