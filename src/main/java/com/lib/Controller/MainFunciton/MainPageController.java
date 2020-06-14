@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,13 +26,14 @@ public class MainPageController {
     }
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
-    public ModelAndView mainPage(){
+    public ModelAndView mainPage(HttpSession session){
         Map<String,Object> map=new HashMap<>();
         User user=new User();
         ModelAndView modelAndView=new ModelAndView();
-        map.put("Reader",user);
+        session.removeAttribute("Reader");
+        session.setAttribute("Reader",user);
         map.put("Room",roomService.getRoomInfoService());
-        map.put("Notice",noticeService.getNoticeInfoService());
+        map.put("Notice",noticeService.getAllNoticeInPage());
         modelAndView.setViewName("Home");
         modelAndView.addAllObjects(map);
         return modelAndView;

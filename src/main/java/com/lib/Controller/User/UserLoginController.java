@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +35,7 @@ public class UserLoginController {
     }
 
     @RequestMapping(value = "/Login/Check",method = RequestMethod.POST)
-    public ModelAndView checkLogin(User user){
+    public ModelAndView checkLogin(User user, HttpSession session){
         Map<String,Object> map=new HashMap<>();
         ModelAndView modelAndView=new ModelAndView();
         User temp=userAccountService.loginService(user.getReaderNo(),user.getPassword());
@@ -42,9 +43,9 @@ public class UserLoginController {
             modelAndView.setViewName("Login");
         }
         else{
-            map.put("Reader",temp);
+            session.setAttribute("Reader",temp);
             map.put("Room",roomService.getRoomInfoService());
-            map.put("Notice",noticeService.getNoticeInfoService());
+            map.put("Notice",noticeService.getAllNoticeInPage());
             modelAndView.setViewName("Home");
             modelAndView.addAllObjects(map);
         }

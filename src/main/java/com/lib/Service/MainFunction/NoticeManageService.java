@@ -1,4 +1,4 @@
-package com.lib.Service.Notice;/*
+package com.lib.Service.MainFunction;/*
     Author:Yin
 */
 
@@ -10,17 +10,15 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class NoticeService {
-
+public class NoticeManageService {
     private final NoticeDao noticeDao;
 
     @Autowired(required = false)
-    public NoticeService(NoticeDao noticeDao){
+    public NoticeManageService(NoticeDao noticeDao){
         this.noticeDao=noticeDao;
     }
 
-    public List<Notice> getAllNoticeInPage(){
+    public List<Notice> getAllNotice(){
         return noticeDao.getNotice();
     }
-
 }

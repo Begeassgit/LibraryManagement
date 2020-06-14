@@ -18,4 +18,10 @@ public interface BookDao {
     //作者名查找
     @Select("SELECT * FROM lib_db.dbo.books_t WHERE (Author=#{Author})")
     List<Book> findBookByAuthor(String Author);
+
+    @Select("SELECT * FORM lib_db.dbo.books_t WHERE (BType=#{BType})")
+    List<Book> findBookByType(String BType);
+
+    @Select("SELECT * FORM lib_db.dbo.books_t WHERE (RoomNo=#{RoomNo})")
+    List<Book> findBookByRoom(String RoomNo);
 }

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="/Image/library.png">
     <title>加里敦大学图书馆</title>
 </head>
-<body>
+<body onload="loginCheck()">
 <div class="head">
     <div class="titleTipsBox">
         <div class="titleImageBox">
@@ -20,13 +20,58 @@
         </div>
     </div>
     <div class="userInfo">
-        <p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
-        <p id="ReaderName" th:text="${Reader.getReaderName()}" onclick="document.getElementById('message').submit()"></p>
+        <p id="ReaderNo" th:text="${session.Reader.getReaderNo()}"></p>
+        <p id="ReaderName" th:text="${session.Reader.getReaderName()}" onclick="document.getElementById('message').submit()"></p>
     </div>
     <div>
         <a id="first-a" href="/Login" target="_self" class="loginTips">登录|注册</a>
         <a id="second-a" href="/" class="loginTips">退出</a>
     </div>
 </div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>书名</td>
+                <td>书名</td>
+                <td>书名</td>
+                <td>书名</td>
+                <td>书名</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
 </body>
+<script type="text/javascript">
+    let readerNo=document.getElementById("ReaderNo").innerHTML;
+    let u1=document.getElementById("first-a");
+    let u2=document.getElementById("second-a");
+
+    u2.style.visibility="hidden";
+
+    function loginCheck(){
+        if(readerNo!==""){
+            u2.style.visibility="visible";
+            u1.style.visibility="hidden";
+        }
+    }
+
+    function submitForm(i) {
+        if(i===1){
+            document.getElementById('inputType').value=1;
+        }
+        else {
+            document.getElementById('inputType').value=0;
+        }
+    }
+
+    function logout() {
+        window.history.forward();
+        window.location.href='/';
+        return true;
+    }
+</script>
 </html>

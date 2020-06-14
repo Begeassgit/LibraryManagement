@@ -22,10 +22,7 @@ public class AdminPageController {
     }
 
     @RequestMapping(value = "/Admin/Index",method = RequestMethod.POST)
-    public ModelAndView adminPage(String adminName, HttpSession session){
-        Admin admin=new Admin();
-        admin.setUserName(adminName);
-        session.setAttribute("AdminSession",admin);
+    public ModelAndView adminPage(){
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("AdminIndex");
         return modelAndView;

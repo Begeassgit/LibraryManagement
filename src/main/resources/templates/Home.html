@@ -25,18 +25,18 @@
             <a  href="#services">探索</a>
         </div>
         <div class="userInfo">
-            <p id="ReaderNo" th:text="${Reader.getReaderNo()}"></p>
-            <p id="ReaderName" th:text="${Reader.getReaderName()}" onclick="document.getElementById('message').submit()"></p>
+            <p id="ReaderNo" th:text="${session.Reader.getReaderNo()}"></p>
+            <p id="ReaderName" th:text="${session.Reader.getReaderName()}" onclick="document.getElementById('message').submit()"></p>
         </div>
         <div>
             <a id="first-a" href="/Login" target="_self" class="loginTips">登录|注册</a>
-            <a id="second-a" href="/" class="loginTips">退出</a>
+            <a id="second-a" onclick="logout()" class="loginTips">退出</a>
         </div>
     </div>
     <div class="mainDiv">
         <div>
             <form hidden action="/MyAccount" method="post" id="message">
-                <input type="hidden" name="ReaderNo" th:value="${Reader.getReaderNo()}">
+                <input type="hidden" name="ReaderNo" th:value="${session.Reader.getReaderNo()}">
             </form>
         </div>
         <div class="viewBox">
@@ -220,6 +220,12 @@
         else {
             document.getElementById('inputType').value=0;
         }
+    }
+
+    function logout() {
+        window.history.forward();
+        window.location.href='/';
+        return true;
     }
 </script>
 </html>

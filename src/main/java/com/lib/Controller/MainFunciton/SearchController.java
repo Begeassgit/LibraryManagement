@@ -36,7 +36,7 @@ public class SearchController {
                 map.put("BookList",null);
             }
         }
-        modelAndView.setViewName("");
+        modelAndView.setViewName("BookResult");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
