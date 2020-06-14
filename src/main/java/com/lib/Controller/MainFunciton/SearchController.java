@@ -41,5 +41,15 @@ public class SearchController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/SearchType",method = RequestMethod.POST)
+    public ModelAndView searchType(String input){
+        ModelAndView modelAndView=new ModelAndView();
+        Map<String,Object>map =new HashMap<>();
+        map.put("BookList",searchService.searchByBType(input));
+        modelAndView.setViewName("BookResult");
+        modelAndView.addAllObjects(map);
+        return modelAndView;
+    }
+
 }
 

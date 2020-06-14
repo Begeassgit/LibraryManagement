@@ -48,40 +48,43 @@
                     <input type="hidden" value="" name="type" id="inputType">
                 </form>
                 <a onclick="submitForm(1);document.getElementById('inputForm').submit();"  class="btn btn-light ss-btn">按书名搜索</a>
-                <a onclick="submitForm(0);document.getElementById('inputForm').submit();"  class="btn btn-light ss-btn">按作者搜索</a>
+                <a onclick="submitForm(2);document.getElementById('inputForm').submit();"  class="btn btn-light ss-btn">按作者搜索</a>
             </div>
         </div>
         <section id="services" class="services">
             <div class="container">
+                <form hidden action="/SearchType" method="post" id="typeForm">
+                    <input hidden name="input" value="" id="bookType">
+                </form>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-notebook"></i></div>
-                        <h4 class="title"><a href="">文学</a></h4>
+                        <h4 class="title"><a onclick="submitBookTypeForm(1);document.getElementById('typeForm').submit()">文学</a></h4>
                         <p class="description">诗歌 散文 小说 剧本 寓言 童话</p>
                     </div>
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-book-alt"></i></div>
-                        <h4 class="title"><a href="">论文期刊</a></h4>
+                        <h4 class="title"><a onclick="submitBookTypeForm(2);document.getElementById('typeForm').submit()">论文期刊</a></h4>
                         <p class="description">中文期刊 中文会议 外文期刊 外文会议 外文学位</p>
                     </div>
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-newspaper"></i></div>
-                        <h4 class="title"><a href="">报纸</a></h4>
+                        <h4 class="title"><a onclick="submitBookTypeForm(3);document.getElementById('typeForm').submit()">报纸</a></h4>
                         <p class="description">中国经济周报合辑 南方时报合辑</p>
                     </div>
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-magento"></i></div>
-                        <h4 class="title"><a href="">杂志</a></h4>
+                        <h4 class="title"><a onclick="submitBookTypeForm(4);document.getElementById('typeForm').submit()">杂志</a></h4>
                         <p class="description">生活时尚 汽车 航空 科学 人文</p>
                     </div>
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-mathematical"></i></div>
-                        <h4 class="title"><a href="">教材</a></h4>
+                        <h4 class="title"><a onclick="submitBookTypeForm(5);document.getElementById('typeForm').submit()">教材</a></h4>
                         <p class="description">十二五国家精选教材 USCC教材</p>
                     </div>
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-file-file"></i></div>
-                        <h4 class="title"><a href="">参考资料</a></h4>
+                        <h4 class="title"><a onclick="submitBookTypeForm(6);document.getElementById('typeForm').submit()">参考资料</a></h4>
                         <p class="description">理科 工科 商学 政治</p>
                     </div>
                 </div>
@@ -218,7 +221,28 @@
             document.getElementById('inputType').value=1;
         }
         else {
-            document.getElementById('inputType').value=0;
+            document.getElementById('inputType').value=2;
+        }
+    }
+
+    function submitBookTypeForm(i) {
+        if(i===1){
+            document.getElementById('bookType').value="文学";
+        }
+        else if(i===2){
+            document.getElementById('bookType').value="论文期刊";
+        }
+        else if(i===3){
+            document.getElementById('bookType').value="报纸";
+        }
+        else if(i===4){
+            document.getElementById('bookType').value="杂志";
+        }
+        else if(i===5){
+            document.getElementById('bookType').value="教材";
+        }
+        else{
+            document.getElementById('bookType').value="参考资料";
         }
     }
 

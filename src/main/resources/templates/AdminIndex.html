@@ -39,21 +39,34 @@
     <!--/sidebar-->
     <div class="main-wrap">
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/AdminIndex" color="#white">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">图书借阅</span></div>
+            <div class="crumb-list"><a href="/Admin" color="#white">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">图书借阅</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
                 <form action="#" method="post">
                     <table class="search-tab">
                         <tr>
-                            <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
-                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
-                            <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
-                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                            <td><input class="common-text" placeholder="输入读者编号" name="keywords" value="" id="" type="text"></td>
+                            <td><input class="common-text" placeholder="借阅图书编号" name="keywords" value="" id="" type="text"></td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="借阅" type="submit"></td>
                         </tr>
                     </table>
                 </form>
             </div>
+            <div class="crumb-wrap">
+                <div class="crumb-list"><a href="/Admin" color="#white">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">图书归还</span></div>
+            </div>
+            <div class="search-content">
+            <form action="#" method="post">
+                <table class="search-tab">
+                    <tr>
+                        <td><input class="common-text" placeholder="输入读者编号" name="keywords" value="" id="" type="text"></td>
+                        <td><input class="common-text" placeholder="归还图书编号" name="keywords" value="" id="" type="text"></td>
+                        <td><input class="btn btn-primary btn2" name="sub" value="归还" type="submit"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
         </div>
     </div>
 </div>

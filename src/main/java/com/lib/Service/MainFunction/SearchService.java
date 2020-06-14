@@ -30,5 +30,9 @@ public class SearchService {
         return bookDao.findBookByAuthor(getAuthor);
     }
 
+    public List<Book> searchByBType(String BType){
+        return bookDao.findBookByType(BType);
+    }
+
 
 }

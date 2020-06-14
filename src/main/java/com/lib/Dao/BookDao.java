@@ -12,16 +12,19 @@ import java.util.List;
 public interface BookDao {
 
     //书名查找
-    @Select("SELECT * FROM lib_db.dbo.books_t WHERE (BookName=#{BookName})")
+    @Select("SELECT * FROM lib_db.dbo.books_t WHERE (BookName LIKE #{BookName})")
     List<Book> findBookByName(String BookName);
 
     //作者名查找
-    @Select("SELECT * FROM lib_db.dbo.books_t WHERE (Author=#{Author})")
+    @Select("SELECT * FROM lib_db.dbo.books_t WHERE (Author LIKE #{Author})")
     List<Book> findBookByAuthor(String Author);
 
-    @Select("SELECT * FORM lib_db.dbo.books_t WHERE (BType=#{BType})")
+    @Select("SELECT * FROM lib_db.dbo.books_t WHERE (BType=#{BType})")
     List<Book> findBookByType(String BType);
 
-    @Select("SELECT * FORM lib_db.dbo.books_t WHERE (RoomNo=#{RoomNo})")
+    @Select("SELECT * FROM lib_db.dbo.books_t WHERE (RoomNo=#{RoomNo})")
     List<Book> findBookByRoom(String RoomNo);
+
+    @Select("SELECT * FROM lib_db.dbo.books_t")
+    List<Book> findAllBooks();
 }
