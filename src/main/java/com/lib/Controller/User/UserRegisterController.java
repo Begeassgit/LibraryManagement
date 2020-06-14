@@ -29,11 +29,12 @@ public class UserRegisterController {
     /*用户注册的信息提交API*/
     @RequestMapping(value = "/Register/Submit",method = RequestMethod.POST)
     public String registerSubmit(String ReaderNo, String Number, String Password){
-        if(userAccountService.registerService(ReaderNo, Number, Password)){
-            return "redirect:/Login";
+        if(!userAccountService.registerService(ReaderNo, Number, Password)){
+            return "RegisterError";
         }
         else {
-            return "RegisterError";
+            return "redirect:/Login";
+
         }
 
     }

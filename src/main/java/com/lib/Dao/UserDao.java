@@ -26,7 +26,7 @@ public interface UserDao {
     @Select("SELECT * FROM lib_db.dbo.user_t WHERE(ReaderNo=#{ReaderNo})")
     User getInfoDao(String ReaderNo);
 
-    @Update("UPDATE lib_db.dbo.user_t SET(ReaderName=#{ReaderName},Age=#{Age},Sex=#{Sex},Identities=#{identities}) WHERE (ReaderNo=#{ReaderNo})")
-    int updateInfo(String ReaderName,short Age,String Sex,String Identities,String ReaderNo);
+    @Update("UPDATE lib_db.dbo.user_t SET Age=#{Age},Sex=#{Sex},Identities=#{identities} WHERE (ReaderNo=#{ReaderNo})")
+    int updateInfo(short Age,String Sex,String identities,String ReaderNo);
 
 }

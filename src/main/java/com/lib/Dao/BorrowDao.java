@@ -14,8 +14,8 @@ import java.util.List;
 public interface BorrowDao {
 
     //查看正在借阅
-    @Select("SELECT * FROM [lib_db].dbo.borrow_t WHERE (BookNo=#{BookNo} AND ReaderNo=#{ReaderNo})")
-    List<Borrow> getMyBorrow();
+    @Select("SELECT * FROM [lib_db].dbo.borrow_t WHERE (ReaderNo=#{ReaderNo})")
+    List<Borrow> getMyBorrow(String ReaderNo);
 
     //还书时删除借阅单
     @Delete("DELETE [lib_db].dbo.borrow_t WHERE (BookNo=#{BookNo} AND ReaderNo=#{ReaderNo})")
@@ -26,6 +26,8 @@ public interface BorrowDao {
             "VALUES(#{BookNo},#{ReaderNo},#{BookName},#{Author},#{BDate})")
     int borrowBook(Borrow borrow);
 
+    @Select("SELECT COUNT(ReaderNo) FROM [lib_db].dbo.borrow_t WHERE (ReaderNo=#{ReaderNo})")
+    int getReadingNow(String ReaderNo);
 
 
 }

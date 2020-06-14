@@ -32,4 +32,8 @@ public class UserAccountService {
     public boolean resetPasswordService(String ReaderNo,String Password){
         return userDao.resetPasswordDao(ReaderNo, Password)>=1;
     }
+
+    public User getUserInfoService(String ReaderNo){
+        return userDao.getInfoDao(ReaderNo);
+    }
 }

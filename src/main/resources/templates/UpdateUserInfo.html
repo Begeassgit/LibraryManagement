@@ -1,0 +1,68 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sufee Admin - HTML5 Admin Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/Image/library.png">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="right-panel" class="right-panel">
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>个人信息</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>更新个人信息</strong>
+                </div>
+                <div class="card-body card-block">
+                    <form action="/UpdateMyMessage" method="post" enctype="multipart/form-data" class="form-horizontal" id="update">
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label class=" form-control-label">账号</label></div>
+                            <div class="col-12 col-md-9">
+                                <input type="text" readonly="readonly" id="text-input" name="ReaderNo" th:value="${session.Reader.getReaderNo()}"
+                                       th:placeholder="${session.Reader.getReaderNo()}" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">性别</label></div>
+                            <div class="col-12 col-md-9"><input type="text" name="Sex" class="form-control"></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">年龄</label></div>
+                            <div class="col-12 col-md-9"><input type="number" name="Age" class="form-control"></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">身份</label></div>
+                            <div class="col-12 col-md-9"><input type="text" name="identities"  class="form-control"></div>
+                        </div>
+                    </form>
+                    <a class="btn btn-success" onclick="document.getElementById('update').submit();">提交</a>
+                </div>    
+            </div>
+        </div>
+    </div>
+</body>   
+<script src="vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/table/main.js"></script>
+                        
+</html>
