@@ -16,10 +16,10 @@ public interface RoomDao {
     List<Room>getRoomInfo();
 
     //更新普通馆室信息
-    @Update("UPDATE [lib_db].dbo.room_t SET (RoomName=#{RoomName},RoomAddress=#{RoomAddress},Tel=#{Tel},RoomUserNo=#{RoomUserNo}) WHERE RoomNo=#{RoomNo}")
-    int updateNormalRoom(String RoomName,String RoomAddress,String Tel,String RoomUserNo,String RoomNo);
+    @Update("UPDATE [lib_db].dbo.room_t SET RoomName=#{RoomName},Tel=#{Tel},RoomUserNo=#{RoomUserNo} WHERE RoomNo=#{RoomNo}")
+    int updateNormalRoom(String RoomName,String Tel,String RoomUserNo,String RoomNo);
 
     //更新图书馆信息
-    @Update("UPDATE [lib_db].dbo.room_t SET (RoomName=#{RoomName},RoomAddress=#{RoomAddress},Tel=#{Tel},RoomUserNo=#{RoomUserNo},Time=#{Time},TimeSep=#{TimeSqp}) WHERE RoomNo=#{RoomNo}")
+    @Update("UPDATE [lib_db].dbo.room_t SET RoomName=#{RoomName},RoomAddress=#{RoomAddress},Tel=#{Tel},RoomUserNo=#{RoomUserNo},Time=#{Time},TimeSep=#{TimeSqp} WHERE RoomNo=#{RoomNo}")
     int updateLibraryInfo(Room room);
 }

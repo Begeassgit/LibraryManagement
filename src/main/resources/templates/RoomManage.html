@@ -67,7 +67,10 @@
                         <td th:text="${room.getTime()}"></td>
                         <td th:text="${room.getTimeSep()}"></td>
                         <td>
-                            <a>编辑</a>
+                            <form action="/Admin/UpdateRoom" method="post" hidden="hidden" th:id="${room.getRoomNo()}">
+                                <input hidden="hidden" name="RoomNo" th:value="${room.getRoomNo()}">
+                            </form>
+                            <a th:onclick="document.getElementById([[${room.getRoomNo()}]]).submit()">编辑</a>
                         </td>
                     </tr>
                 </tbody>

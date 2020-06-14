@@ -59,7 +59,10 @@
                     <td th:text="${notice.getNoticeTitle()}"></td>
                     <td th:text="${notice.getNotice()}"></td>
                     <td>
-                        <a>编辑</a>
+                        <form action="/Admin/UpdateNotice" method="post" hidden="hidden" th:id="${notice.getNoticeNo()}">
+                            <input hidden="hidden" name="NoticeNo" th:value="${notice.getNoticeNo()}">
+                        </form>
+                        <a th:onclick="document.getElementById([[${notice.getNoticeNo()}]]).submit()">编辑</a>
                     </td>
                 </tr>
             </tbody>

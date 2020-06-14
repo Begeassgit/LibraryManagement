@@ -11,7 +11,10 @@
 <body>
 <div class="topbar-wrap">
     <div>
-        <p th:text="${'欢迎： '+session.AdminSession.getUserName()}"class="adminInfo"></p>
+        <p th:text="${'欢迎： '+session.AdminSession.getUserName()}"class="adminInfo" style="font-size: 24px;
+           color: black;
+           margin-left: 10px;
+           margin-bottom: 0px;"></p>
     </div>
 </div>
 <div class="container clearfix">
@@ -43,11 +46,11 @@
         </div>
         <div class="search-wrap">
             <div class="search-content">
-                <form action="#" method="post">
+                <form action="/Admin/Borrow" method="post">
                     <table class="search-tab">
                         <tr>
-                            <td><input class="common-text" placeholder="输入读者编号" name="keywords" value="" id="" type="text"></td>
-                            <td><input class="common-text" placeholder="借阅图书编号" name="keywords" value="" id="" type="text"></td>
+                            <td><input class="common-text" placeholder="输入读者编号" name="ReaderNo" type="text"></td>
+                            <td><input class="common-text" placeholder="借阅图书编号" name="BookNo" type="text"></td>
                             <td><input class="btn btn-primary btn2" name="sub" value="借阅" type="submit"></td>
                         </tr>
                     </table>
@@ -57,16 +60,25 @@
                 <div class="crumb-list"><a href="/Admin" color="#white">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">图书归还</span></div>
             </div>
             <div class="search-content">
-            <form action="#" method="post">
+                <form action="/Admin/Return" method="post">
                 <table class="search-tab">
                     <tr>
-                        <td><input class="common-text" placeholder="输入读者编号" name="keywords" value="" id="" type="text"></td>
-                        <td><input class="common-text" placeholder="归还图书编号" name="keywords" value="" id="" type="text"></td>
+                        <td><input class="common-text" placeholder="输入读者编号" name="ReaderNo" type="text"></td>
+                        <td><input class="common-text" placeholder="归还图书编号" name="BookNo"  type="text"></td>
                         <td><input class="btn btn-primary btn2" name="sub" value="归还" type="submit"></td>
                     </tr>
                 </table>
             </form>
         </div>
+        </div>
+        <div>
+            <h2>说明</h2>
+            <p>
+                借出：分别在“借阅”按钮前面的两个文本框内输入图书的编号和读者的编号，点击“借阅”按钮即可完成借书操作。此时对应读者的借阅表下会生成一条新的记录，同时图书数量相应减少
+            </p>
+            <p>
+                归还：分别在“归还”按钮前面的两个文本框内将要归还的图书的编号和读者的编号，点击“归还”按钮即可完成归还操作。此时对应读者的借阅表内的记录会被删除，同时数据库图书数量相应增加1
+            </p>
         </div>
     </div>
 </div>

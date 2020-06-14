@@ -3,10 +3,9 @@ package com.lib.Dao;
     Author:Yin
 */
 import com.lib.Entity.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface UserDao {
@@ -28,5 +27,11 @@ public interface UserDao {
 
     @Update("UPDATE lib_db.dbo.user_t SET Age=#{Age},Sex=#{Sex},Identities=#{identities} WHERE (ReaderNo=#{ReaderNo})")
     int updateInfo(short Age,String Sex,String identities,String ReaderNo);
+
+    @Select("SELECT * FROM lib_db.dbo.user_t WHERE (ReaderNo=#{ReaderNo})")
+    List<User> getUserById(String ReaderNo);
+
+    @Delete("DELETE FROM lib_db.dbo.user_t WHERE (ReaderNo=#{ReaderNo})")
+    int delOne(String ReaderNo);
 
 }

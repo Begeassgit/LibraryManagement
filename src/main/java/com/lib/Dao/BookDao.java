@@ -3,8 +3,10 @@ package com.lib.Dao;
     Author:Yin
 */
 import com.lib.Entity.Book;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -27,4 +29,14 @@ public interface BookDao {
 
     @Select("SELECT * FROM lib_db.dbo.books_t")
     List<Book> findAllBooks();
+
+    @Select("SELECT * FROM lib_db.dbo.books_t WHERE(BookNo=#{BookNo})")
+    Book findBookByNo(String BookNo);
+
+    @Update("UPDATE lib_db.dbo.books_t SET InBase=#{InBase} WHERE (BookNo=#{BookNo})")
+    void updateInBase(int InBase,String BookNo);
+
+    @Insert("INSERT INTO lib_db.dbo.books_t(BookNo,BookName,Author,RoomNo,PublicInfo,BType,InBase)" +
+            " VALUES(#{BookNo},#{BookName},#{Author},#{RoomNo},#{PublicInfo},#{BType},#{InBase})")
+    int addBook(Book book);
 }

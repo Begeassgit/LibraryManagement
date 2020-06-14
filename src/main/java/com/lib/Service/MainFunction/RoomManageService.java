@@ -22,5 +22,7 @@ public class RoomManageService {
         return roomDao.getRoomInfo();
     }
 
-
+    public boolean updateRoom(String RoomNo,String RoomUserNo,String Tel,String RoomName){
+        return  roomDao.updateNormalRoom(RoomName, Tel, RoomUserNo, RoomNo)>=1;
+    }
 }

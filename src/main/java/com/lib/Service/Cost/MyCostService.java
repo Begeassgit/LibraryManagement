@@ -29,4 +29,8 @@ public class MyCostService {
     public int getCostCount(String ReaderNo){
         return costDao.getCostCount(ReaderNo);
     }
+
+    public boolean addCost(Cost cost){
+        return costDao.addCost(cost)>=1;
+    }
 }

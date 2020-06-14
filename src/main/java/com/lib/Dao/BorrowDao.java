@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.Date;
 import java.util.List;
 
 @Mapper
@@ -18,7 +19,7 @@ public interface BorrowDao {
     List<Borrow> getMyBorrow(String ReaderNo);
 
     //还书时删除借阅单
-    @Delete("DELETE [lib_db].dbo.borrow_t WHERE (BookNo=#{BookNo} AND ReaderNo=#{ReaderNo})")
+    @Delete("DELETE FROM [lib_db].dbo.borrow_t WHERE (BookNo=#{BookNo} AND ReaderNo=#{ReaderNo})")
     int returnBook(String BookNo,String ReaderNo);
 
     //借阅图书生成借阅单
@@ -29,5 +30,6 @@ public interface BorrowDao {
     @Select("SELECT COUNT(ReaderNo) FROM [lib_db].dbo.borrow_t WHERE (ReaderNo=#{ReaderNo})")
     int getReadingNow(String ReaderNo);
 
-
+    @Select("SELECT BDate FROM [lib_db].dbo.borrow_t WHERE (BookNo=#{BookNo} AND ReaderNo=#{ReaderNo})")
+    Date getBDate(String BookNo, String ReaderNo);
 }

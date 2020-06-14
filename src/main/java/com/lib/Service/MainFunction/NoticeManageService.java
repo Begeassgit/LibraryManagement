@@ -21,4 +21,8 @@ public class NoticeManageService {
     public List<Notice> getAllNotice(){
         return noticeDao.getNotice();
     }
+
+    public boolean updateNotice(int  NoticeNo,String Notice,String NoticeTitle){
+        return noticeDao.updateNotice(Notice, NoticeTitle, NoticeNo)>=1;
+    }
 }

@@ -26,6 +26,11 @@ public class UserRegisterController {
         return "Register";
     }
 
+    @RequestMapping(value = "/Register1",method = RequestMethod.GET)
+    public String registerPag(){
+        return "RegisterError";
+    }
+
     /*用户注册的信息提交API*/
     @RequestMapping(value = "/Register/Submit",method = RequestMethod.POST)
     public String registerSubmit(String ReaderNo, String Number, String Password){

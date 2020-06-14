@@ -29,4 +29,26 @@ public class NoticeManageController {
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
+
+    @RequestMapping(value = "/Admin/UpdateNotice",method = RequestMethod.POST)
+    public ModelAndView updateNoticePage(String NoticeNo){
+        int NoticeNoInt= Integer.parseInt(NoticeNo);
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.setViewName("UpdateNoticeInfo");
+        modelAndView.addObject("NoticeNo",NoticeNoInt);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/Admin/UpdateNoticeSubmit",method = RequestMethod.POST)
+    public ModelAndView updateNoticeSubmit(Integer NoticeNo,String NoticeTitle,String Notice){
+        ModelAndView modelAndView=new ModelAndView();
+        Map<String,Object>map =new HashMap<>();
+        if(!noticeManageService.updateNotice(NoticeNo, Notice, NoticeTitle)){
+            modelAndView.setViewName("RegisterError");
+        }
+        map.put("noticeList",noticeManageService.getAllNotice());
+        modelAndView.setViewName("NoticeManage");
+        modelAndView.addAllObjects(map);
+        return modelAndView;
+    }
 }
