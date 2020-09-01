@@ -1,5 +1,7 @@
 package com.lib.Service.User;
-
+/*
+    Author:Yin
+*/
 import com.lib.Dao.UserDao;
 import com.lib.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +18,9 @@ public class UserInfoService {
 
     public User getUserInfoService(String ReaderNo){
         return userDao.getInfoDao(ReaderNo);
+    }
+
+    public boolean updateUserInfo(short Age,String Sex,String Identities,String ReaderNo){
+        return userDao.updateInfo(Age,Sex,Identities,ReaderNo)>=1;
     }
 }

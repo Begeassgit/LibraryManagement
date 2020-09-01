@@ -1,0 +1,128 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员中心</title>
+    <link rel="stylesheet" type="text/css" href="../common.css"/>
+    <link rel="stylesheet" type="text/css" href="../main.css"/>
+    <link rel="icon" type="image/png" href="/Image/library.png">
+    <script type="text/javascript" src="../js/libs/modernizr.min.js"></script>
+</head>
+<body>
+<div class="topbar-wrap">
+    <div>
+        <p th:text="${'欢迎： '+session.AdminSession.getUserName()}"class="adminInfo" style="font-size: 24px;
+           color: black;
+           margin-left: 10px;
+           margin-bottom: 0px;"></p>
+    </div>
+</div>
+<div class="container clearfix">
+    <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>选项</h1>
+        </div>
+        <form hidden method="post" name="form1" id="infoForm">
+            <input hidden name="adminName" th:value="${session.AdminSession.getUserName()}">
+        </form>
+        <div class="sidebar-content">
+            <ul class="sidebar-list">
+                <li>
+                    <ul class="sub-menu">
+                        <li><a onclick="submitInfo(1)">还借处理</a></li>
+                        <li><a onclick="submitInfo(2)">图书管理</a></li>
+                        <li><a onclick="submitInfo(3)">用户管理</a></li>
+                        <li><a onclick="submitInfo(4)">馆室管理</a></li>
+                        <li><a onclick="submitInfo(5)">通知管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--/sidebar-->
+    <div class="main-wrap">
+        <div class="crumb-wrap">
+            <div class="crumb-list"><a href="/Admin" color="#white">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">图书借阅</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="/Admin/Borrow" method="post">
+                    <table class="search-tab">
+                        <tr>
+                            <td><input class="common-text" placeholder="输入读者编号" name="ReaderNo" type="text"></td>
+                            <td><input class="common-text" placeholder="借阅图书编号" name="BookNo" type="text"></td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="借阅" type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="crumb-wrap">
+                <div class="crumb-list"><a href="/Admin" color="#white">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">图书归还</span></div>
+            </div>
+            <div class="search-content">
+                <form action="/Admin/Return" method="post">
+                <table class="search-tab">
+                    <tr>
+                        <td><input class="common-text" placeholder="输入读者编号" name="ReaderNo" type="text"></td>
+                        <td><input class="common-text" placeholder="归还图书编号" name="BookNo"  type="text"></td>
+                        <td><input class="btn btn-primary btn2" name="sub" value="归还" type="submit"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        </div>
+        <div>
+            <h2>说明</h2>
+            <p>
+                借出：分别在“借阅”按钮前面的两个文本框内输入图书的编号和读者的编号，点击“借阅”按钮即可完成借书操作。此时对应读者的借阅表下会生成一条新的记录，同时图书数量相应减少
+            </p>
+            <p>
+                归还：分别在“归还”按钮前面的两个文本框内将要归还的图书的编号和读者的编号，点击“归还”按钮即可完成归还操作。此时对应读者的借阅表内的记录会被删除，同时数据库图书数量相应增加1
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function submitInfo(i) {
+        switch (i) {
+            case 1: {
+                document.form1.action = "/Admin/Index";
+                document.form1.submit();
+                return true
+            }
+                break;
+            case 2: {
+                document.form1.action = "/Admin/BookManage";
+                document.form1.submit();
+                return true
+            }
+                break;
+            case 3: {
+                document.form1.action = "/Admin/UserManage";
+                document.form1.submit();
+                return true
+            }
+                break;
+            case 4: {
+                document.form1.action = "/Admin/RoomsManage";
+                document.form1.submit();
+                return true
+            }
+                break;
+            case 5: {
+                document.form1.action = "/Admin/NoticeManage";
+                document.form1.submit();
+                return true
+            }
+                break;
+            default:
+            {
+                alert("Error");
+                return false;
+            }
+
+        }
+    }
+</script>
+</html>

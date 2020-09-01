@@ -1,0 +1,64 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>更新馆室信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../Image/library.png">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="right-panel" class="right-panel">
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>通知信息</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>通知信息</strong>
+                </div>
+                <div class="card-body card-block">
+                    <form action="/Admin/UpdateNoticeSubmit" method="post" enctype="multipart/form-data" class="form-horizontal" id="update">
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label class=" form-control-label">编号</label></div>
+                            <div class="col-12 col-md-9">
+                                <input type="number"  id="text-input" readonly="readonly" name="NoticeNo" th:value="${NoticeNo}"
+                                       th:placeholder="${NoticeNo}" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">通知题目</label></div>
+                            <div class="col-12 col-md-9"><input type="text" name="NoticeTitle" class="form-control"></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">通知正文</label></div>
+                            <div class="col-12 col-md-9"><textarea row="16" col="20" name="Notice" class="form-control"></textarea></div>
+                        </div>
+                    </form>
+                    <a class="btn btn-success" style="color: azure;" onclick="document.getElementById('update').submit();">提交</a>
+                </div>    
+            </div>
+        </div>
+    </div>
+</body>   
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
+<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../js/table/main.js"></script>
+                        
+</html>

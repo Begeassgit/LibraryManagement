@@ -1,0 +1,38 @@
+body{
+    background-image: url("Image/image4.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+#pay{
+    width: 600px;
+    height: 800px;
+    background-color: rgba(97, 97, 101, 0.53);
+    margin: auto;
+}
+
+#atitle{
+    width: 600px;
+    height: 30px;
+    text-align: center;
+    text-align: center;
+}
+
+#abname{
+    width: 300px;
+    height: 700px;
+    float: top;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+}
+
+#price{
+    width: 300px;
+    height: 700px;
+    float: left;
+    float: top;
+    text-align: center;
+    line-height: 30px;
+}

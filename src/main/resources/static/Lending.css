@@ -1,0 +1,69 @@
+body{
+    background-image: url("Image/image1.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+#all{
+    width: 820px;
+    height: 800px;
+    background-color: rgba(97, 97, 101, 0.53);
+    margin: auto;
+}
+
+#title{
+    width: 600px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+    color: #1cf1c0;
+
+}
+
+#bname{
+    width:200px;
+    height: 700px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    margin: 20px;
+
+}
+
+#author{
+    width: 100px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    margin: 20px;
+}
+
+#date1{
+    width: 100px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    margin: 20px;
+}
+
+#date2{
+    width: 100px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    margin: 20px;
+}
+
+#day{
+    width: 100px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    margin: 20px;
+}

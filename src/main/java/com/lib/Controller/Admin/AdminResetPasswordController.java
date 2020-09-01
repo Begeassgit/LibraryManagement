@@ -1,5 +1,7 @@
 package com.lib.Controller.Admin;
-
+/*
+    Author:Yin
+*/
 import com.lib.Service.Admin.AdminAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminResetPasswordController {
     private final AdminAccountService adminAccountService;
 
-    @Autowired(required = false)
     public AdminResetPasswordController(AdminAccountService adminAccountService){
         this.adminAccountService=adminAccountService;
     }
@@ -21,7 +22,6 @@ public class AdminResetPasswordController {
         return "Reset";
     }
 
-    @ResponseBody
     @RequestMapping(value = "/Admin/Login/ResetSubmit")
     public ModelAndView checkReset(String UserNo,String Password){
         ModelAndView modelAndView=new ModelAndView();

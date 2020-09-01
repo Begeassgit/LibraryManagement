@@ -1,0 +1,63 @@
+body{
+    background-image: url("Image/image2.webp");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+#room{
+    background-color: rgba(97, 97, 101, 0.53);
+    width: 800px;
+    height: 1000px;
+    margin: auto;
+}
+
+#rtitle{
+    width: 800px;
+    height: 50px;
+    text-align: center;
+    font-size: 40px;
+    color: #1cf1c0;
+}
+
+#rname{
+    width: 200px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 350px;
+}
+
+#free{
+    width: 200px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 550px;
+}
+
+#buzy{
+    width: 200px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 750px;
+}
+
+#bookable{
+    width: 200px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 950px;
+    border-radius: 20px;
+    color: green;
+}

@@ -1,0 +1,56 @@
+body{
+    background-image: url("Image/image3.webp");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+#gross{
+    width: 660px;
+    height: 800px;
+    background-color: rgba(97, 97, 101, 0.53);
+    margin: auto;
+}
+
+#htitle{
+    text-align: center;
+    color: #1cf1c0;
+    font-size: 40px;
+}
+
+#hbname{
+    width:200px;
+    height: 700px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    margin: 20px;
+
+}
+
+#hauthor{
+    width: 100px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    margin: 20px;
+}
+
+#hdate1{
+    width: 100px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    margin: 20px;
+}
+
+#hdate2{
+    width: 100px;
+    height: 700px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    margin: 20px;
+}

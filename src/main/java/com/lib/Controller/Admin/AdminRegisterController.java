@@ -1,5 +1,7 @@
 package com.lib.Controller.Admin;
-
+/*
+    Author:Yin
+*/
 import com.lib.Entity.Admin;
 import com.lib.Service.Admin.AdminAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AdminRegisterController {
     private final AdminAccountService adminAccountService;
 
-    @Autowired(required = false)
     public AdminRegisterController(AdminAccountService adminAccountService){
         this.adminAccountService=adminAccountService;
     }

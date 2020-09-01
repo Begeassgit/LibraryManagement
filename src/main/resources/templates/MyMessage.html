@@ -1,0 +1,142 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>个人信息</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/Image/library.png">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="right-panel" class="right-panel">
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>个人信息</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9">
+            <div class="card" style="height: 296px;" >
+                <div class="twt-feed blue-bg">
+                    <div class="corner-ribon black-ribon">
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                    <div class="fa fa-twitter wtt-mark"></div>
+    
+                    <div class="media">
+                        <a href="#"><img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="Image/user.png"></a>
+                        <div class="media-body">
+                            <h2 class="text-white display-6" th:text="${Reader.getReaderName()}"></h2>
+                            <p class="text-light" th:text="${Reader.getReaderNo()}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-category twt-category">
+                    <ul>
+                        <li style="color: black">
+                            <h5 th:text="${History}"></h5>
+                            借阅数
+                        </li>
+                        <li style="color: black">
+                            <h5 th:text="${Cost}"></h5>
+                            逾期次数
+                        </li>
+                        <li style="color: black">
+                            <h5 th:text="${ReadingNow}"></h5>
+                            正在阅读中
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <form hidden="hidden" action="/UpdateMyMessagePage" method="post" id="update"></form>
+                <div class="card-header"><strong>个人其他信息</strong><a class="btn btn-success" style="margin-left:5px;" onclick="document.getElementById('update').submit()">完善信息</a></div>
+                <div class="card-body card-block">
+                    <div class="form-group"><label class=" form-control-label" th:text="${'性别：'+Reader.getSex()}"></label></div>
+                    <div class="form-group"><label  class=" form-control-label"th:text="${'年龄：'+Reader.getAge()}"></label></div>
+                    <div class="form-group"><label  class=" form-control-label"th:text="${'身份：'+Reader.getIdentities()}"></label></div>
+                    <div class="form-group"><label  class=" form-control-label"th:text="${'电话：'+Reader.getNumber()}"></label></div>
+                </div>
+            </div>
+        </div> 
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">正在借阅中</strong>
+                </div>
+                <div class="card-body">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">图书编号</th>
+                                <th scope="col">书名</th>
+                                <th scope="col">作者</th>
+                                <th scope="col">借阅日期</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr th:each="borrowList:${BorrowList}">
+                                <td th:text="${borrowList.getBookNo()}">Mark</td>
+                                <td th:text="${borrowList.getBookName()}"></td>
+                                <td th:text="${borrowList.getAuthor()}"></td>
+                                <td th:text="${borrowList.getBDate()}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">借阅历史</strong>
+                </div>
+                <div class="card-body">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">图书编号</th>
+                                <th scope="col">图书名称</th>
+                                <th scope="col">作者</th>
+                                <th scope="col">借阅日期</th>
+                                <th scope="col">归还日期</th>
+                                <th scope="col">逾期费用</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="HistoryList:${CostList}">
+                                <td th:text="${HistoryList.getBookNo()}"></td>
+                                <td th:text="${HistoryList.getBookName()}"></td>
+                                <td th:text="${HistoryList.getAuthor()}"></td>
+                                <td th:text="${HistoryList.getBDate()}"></td>
+                                <td th:text="${HistoryList.getRDate()}"></td>
+                                <td th:text="${HistoryList.getMoney()}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </diV>  
+</body>   
+<script src="vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/table/main.js"></script>
+                        
+</html>

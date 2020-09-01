@@ -1,22 +1,7 @@
 body{
-    background-image:url("Image/bg3.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
+    margin: 0;
 }
 
-a button{
-    outline-style: dot-dash;
-    color: white;
-    background-color: lightskyblue;
-    text-decoration: none;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    border: none;
-    font-family: sans-serif;
-    cursor: pointer;
-
-}
 a button:link{
     color: #89ff20;
 }
@@ -26,14 +11,17 @@ a button:active{
 
 .head{
     position: absolute;
+    margin-left: 0;
+    padding-left: 0;
+    border: 0;
+    background-color: #464646;
     top: 0px;
-    left: 25%;
-    width: 800px;
+    left: 0;
+    width: 100%;
     height: 80px;
-    color: black;
-    text-align: center;
-    line-height: 80px;
-    font-size: 50px;
+    color: azure;
+    text-align: left;
+    font-size: 30px;
     animation: x 5s infinite alternate;
     -webkit-animation: x 5s infinite alternate;
 }
@@ -48,17 +36,6 @@ a button:active{
     text-align: center;
     line-height: 30px;
 }
-
-#hismessage,#libmessage,#payrmessage,#nowmessage,#usermessage{
-    text-decoration: none;
-    color: white;
-
-}
-
-#hismessage:hover,#libmessage:hover,#payrmessage:hover,#nowmessage:hover,#usermessage:hover{
-    color: #dbf810;
-}
-
 img{
     width: 20px;
     height: 20px;
@@ -85,115 +62,238 @@ img{
 }
 
 .ss{
-    width: 500px;
-    height: 100px;
     position: absolute;
-    left: 300px;
-    top:150px;
+    width: 400px;
+    height: 100px;
+    left: 361px;
+    top:267px;
 }
 
 .inp{
-    height: 20px;
-    width: 400px;
+    font-size: 20px;
+    border-radius: 30px;
+    height: 35px;
+    width: 323px;
 }
 
 .ss-btn{
-   background-color: white;
+    margin-top:13px;
+    border: 0;
+    font-family: 华文楷体, serif;
+    padding: 3px;
+    font-size: 31px;
+    color: azure;
+    background-color: transparent;
 }
 
-.first{
-    position: absolute;
-    top: 200px;
-    left: 200px;
-    width: 40px;
+.footer{
+    color: azure;
     text-align: center;
-    font-size: 15px;
-}
-
-.first img{
-    height:30px;
+    position: relative;
+    bottom: 0;
     width: 100%;
+    background-color: #464646;
 }
+.footer p{
+    margin: 0;
+    padding: 0;
+}
+.mainDiv{
 
-.first a{
+}
+.tips{
+    z-index: -1;
+    width: 300px;
+    position: relative;
+    left: 25%;
+}
+.loginTips{
+    top:25px;
+    right: 19%;
+    margin-top: 0;
+    padding-top: 3px;
+    padding-right: 3px ;
+    outline-style: dot-dash;
+    color: white;
     text-decoration: none;
-}
-
-.second{
     position: absolute;
-    top: 200px;
-    left: 300px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
+    border: none;
+    font-family: sans-serif;
+    cursor: pointer;
+    font-size: 18px;
 }
-
-.second img{
-    height:30px;
-    width: 100%;
-}
-
-.second a{
-    text-decoration: none;
-}
-
-.third{
+.userInfo{
+    top: 13px;
     position: absolute;
-    top: 200px;
-    left: 400px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
+    right: 22%;
 }
-
-.third img{
-    height:30px;
-    width: 100%;
+.userInfo p{
+     color: azure;
+     margin: 0;
+    padding: 3px;
+    font-size: 17px;
+ }
+.userInfo a{
+    color: azure;
+    margin: 0;
+    padding: 3px;
+    font-size: 17px;
 }
-
-.third a{
-    text-decoration: none;
-}
-
-.forth{
+.titleTipsBox{
     position: absolute;
-    top: 200px;
-    left: 500px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
+    margin: 0;
+    padding:0;
+    left: 19%;
+    top: 0;
 }
-
-.forth img{
-    height:30px;
-    width: 100%;
+.titleTips{
+    font-family: 华文楷体;
+    margin: 0;
+    padding:0;
 }
-
-.forth a{
-    text-decoration: none;
+.titleTipsImag{
+    padding: 5px;
+    margin: 0;
+    width: 60px;
+    height: 60px;
 }
-
-.fifth{
+.titleImageBox{
     position: absolute;
-    top: 200px;
-    left: 600px;
-    width: 40px;
-    text-align: center;
-    font-size: 15px;
 }
-
-.fifth img{
-    height:30px;
+.titleTipsIn{
+    width: 300px;
+    position: absolute;
+    left: 70px;
+}
+.viewBox{
+    top: 80px;
+    position: relative;
+}
+.viewBox img{
     width: 100%;
+    position: relative;
+    height: auto;
+}
+.title{
+    margin: 0;
+    padding: 0;
+    color: azure;
+    font-family: 华文楷体, serif;
+    font-size: 45px;
+}
+.jump{
+    right: 30%;
+    top: 24px;
+    font-family: 华文楷体,serif;
+    font-size: 29px;
+    float: left;
+    position: absolute;
+}
+.jump a{
+    color: azure;
+    outline: none;
+    text-decoration-line: none;
+}
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services {
+    padding-bottom: 30px;
 }
 
-.fifth a{
-    text-decoration: none;
+.services .icon-box {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.first a:hover,.second a:hover,.third a:hover,.forth a:hover,.fifth a:hover{
-    transform: scale(0.94);
+.services .icon {
+    display: flex;
+    justify-content: center;
+}
 
+.services .icon i {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.5s;
+    color: #428bca;
+    font-size: 40px;
+    overflow: hidden;
+    padding-top: 20px;
+    box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.services .icon-box:hover .icon i {
+    box-shadow: 0px 0 30px rgba(66, 139, 202, 0.5);
+}
+
+.services .title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.services .title a {
+    color: #444;
+    transition: 0.3s;
+}
+
+.services .title a:hover {
+    color: #428bca;
+}
+
+.services .title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #428bca;
+    bottom: 0;
+    left: calc(50% - 25px);
+}
+
+.services .description {
+    line-height: 24px;
+    font-size: 14px;
+}
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+.faq {
+    padding-bottom: 30px;
+}
+
+.faq .faq-item {
+    margin-bottom: 40px;
+}
+
+.faq .faq-item h4 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1f3548;
+}
+
+.faq .faq-items {
+    margin-bottom: 40px;
+}
+
+.faq .faq-items h4 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: azure;
+}
+
+.faq .faq-items p {
+    color: azure;
 }
 
 

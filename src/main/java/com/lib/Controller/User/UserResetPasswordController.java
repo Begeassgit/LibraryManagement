@@ -1,5 +1,7 @@
 package com.lib.Controller.User;
-
+/*
+    Author:Yin
+*/
 import com.lib.Service.User.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +15,6 @@ public class UserResetPasswordController {
 
     private final UserAccountService userAccountService;
 
-    @Autowired(required = false)
     public UserResetPasswordController(UserAccountService userAccountService){
         this.userAccountService=userAccountService;
     }
@@ -23,7 +24,6 @@ public class UserResetPasswordController {
         return "Reset";
     }
 
-    @ResponseBody
     @RequestMapping(value = "/Login/RestSubmit",method = RequestMethod.POST)
     public ModelAndView checkReset(String ReaderNo,String Password){
         ModelAndView modelAndView=new ModelAndView();
