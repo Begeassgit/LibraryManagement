@@ -26,6 +26,7 @@ public class UserAccountService {
         user.setReaderNo(ReaderNo);
         user.setNumber(Number);
         user.setPassword(Password);
+        user.setReaderName("请修改");
         return userDao.registerDao(user)>=1;
     }
 

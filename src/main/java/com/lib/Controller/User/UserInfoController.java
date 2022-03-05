@@ -58,9 +58,9 @@ public class UserInfoController {
     }
 
     @RequestMapping(value = "/UpdateMyMessage",method = RequestMethod.POST)
-    public ModelAndView updateMyMessage(short Age,String Sex,String identities,String ReaderNo){
+    public ModelAndView updateMyMessage(short Age,String Sex,String identities,String ReaderNo,String ReaderName){
         ModelAndView modelAndView=new ModelAndView();
-        if(!userInfoService.updateUserInfo(Age, Sex, identities, ReaderNo)){
+        if(!userInfoService.updateUserInfo(Age, Sex, identities, ReaderNo, ReaderName)){
             modelAndView.setViewName("RegisterError");
         }
         Map<String,Object>map=new HashMap<>();

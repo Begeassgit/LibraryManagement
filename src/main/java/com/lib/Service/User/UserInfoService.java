@@ -20,7 +20,7 @@ public class UserInfoService {
         return userDao.getInfoDao(ReaderNo);
     }
 
-    public boolean updateUserInfo(short Age,String Sex,String Identities,String ReaderNo){
-        return userDao.updateInfo(Age,Sex,Identities,ReaderNo)>=1;
+    public boolean updateUserInfo(short Age,String Sex,String Identities,String ReaderNo,String ReaderName){
+        return userDao.updateInfo(Age,Sex,Identities,ReaderNo,ReaderName)>=1;
     }
 }
