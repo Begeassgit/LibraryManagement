@@ -1,5 +1,5 @@
 # LibraryManagement
-图书馆信息管理系统
+图书馆信息管理系统  
 Software engineering 课程项目
 ## 功能列表
 * 用户注册、登录
